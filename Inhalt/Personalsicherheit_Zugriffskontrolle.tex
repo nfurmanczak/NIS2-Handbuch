@@ -1,0 +1,104 @@
+\newpage
+\subsection{Personalsicherheit, Zugriffskontrolle und Asset-Management}
+
+\textbf{Anforderung:} NIS2 fordert Maßnahmen zur Sicherheit des Personals, strukturierte Konzepte für die Zugriffskontrolle sowie ein systematisches Management von Anlagen. Die drei Bereiche sind eng verknüpft: Wer auf welche Systeme zugreifen darf, hängt von der Rolle ab, und das Wissen über vorhandene Anlagen ist die Grundlage für beides.
+
+\textbf{Sicherheit des Personals}
+
+Menschen sind nach wie vor eines der häufigsten Einfallstore, sei es durch Fehler, Unachtsamkeit oder gezielte Angriffe auf Mitarbeitende. NIS2 fordert daher, neben technischen Maßnahmen auch den Faktor Mensch aktiv in die Sicherheitsstrategie einzubeziehen.
+
+Es geht nicht um Misstrauen, sondern um klare Strukturen und Verantwortlichkeiten, damit alle wissen, was von ihnen erwartet wird.
+
+\textbf{Onboarding und Offboarding}
+
+Besonders kritisch sind Ein- und Austritt von Mitarbeitenden. Hier entstehen häufig Sicherheitslücken, weil Prozesse unklar sind oder nicht konsequent umgesetzt werden.
+
+Beim Onboarding sollte geregelt sein, welche Zugänge, Geräte und Berechtigungen eine neue Person erhält, wer sie bereitstellt und wer die Vergabe dokumentiert. Je nach Rolle kann es sinnvoll sein, über relevante Sicherheitsrichtlinien zu informieren und eine Bestätigung einzuholen. Vertraulichkeitsvereinbarungen regeln den Umgang mit sensiblen Informationen verbindlich.
+
+Das Offboarding ist in der Praxis oft der schwächere Prozess. Beim Austritt müssen alle Zugänge zeitnah und vollständig entzogen werden. Das betrifft nicht nur E-Mail und VPN, sondern auch Cloud-Dienste, externe Systeme und gemeinsam genutzte Zugangsdaten, die sonst erfahrungsgemäß vergessen werden. Empfehlenswert ist eine Offboarding-Checkliste, die fest mit dem Prozess zur Verwaltung von Zugriffsrechten verknüpft ist.
+\newpage
+\textbf{Rollen und Verantwortlichkeiten}
+
+Legen Sie fest, welche Rollen sicherheitsrelevante Aufgaben übernehmen. Ein aufwendiges Organigramm ist nicht nötig, aber auch in kleinen Organisationen sollte klar sein, wer für IT-Sicherheit verantwortlich ist, wer bei Vorfällen Ansprechperson ist und wer administrative Rechte besitzt. Dies sollte dokumentiert und den relevanten Mitarbeitenden bekannt sein.
+
+Für Personen mit erhöhten Rechten, etwa Systemadministratoren oder Mitarbeitende mit Zugang zu besonders sensiblen Daten, können zusätzliche Maßnahmen sinnvoll sein, beispielsweise das Vier-Augen-Prinzip bei kritischen Aktionen.
+\newpage
+\textbf{Konzepte für die Zugriffskontrolle}
+
+Zugriffskontrolle regelt, wer unter welchen Bedingungen auf welche Systeme, Daten und Ressourcen zugreifen darf. Ein durchdachtes Zugriffskonzept ist eine der effektivsten Maßnahmen zur Schadensbegrenzung: Hat ein kompromittiertes Konto nur eingeschränkte Rechte, bleibt der Schaden begrenzt; mit vollen Administratorrechten kann ein Angreifer die gesamte Infrastruktur übernehmen.
+
+\textbf{Das Prinzip der minimalen Rechte}
+
+Jede Person und jedes System sollte nur die Rechte haben, die für die jeweilige Tätigkeit tatsächlich nötig sind. In der Praxis wird dies oft verletzt, weil großzügige Rechte einfacher sind als eine genaue Prüfung. So entstehen über Jahre gewachsene Berechtigungsstrukturen mit deutlich zu vielen Rechten.
+
+Prüfen Sie regelmäßig die vergebenen Berechtigungen und fragen Sie aktiv nach, ob sie noch gebraucht werden. Gerade bei Abteilungs- oder Rollenwechseln werden alte Rechte häufig nicht entzogen. Eine jährliche Überprüfung aller Zugriffsrechte ist gute Praxis und zugleich ein wichtiger Nachweis gegenüber Aufsichtsbehörden.
+
+\textbf{Identitäts- und Zugriffsmanagement}
+
+Technische Grundlage ist ein strukturiertes Identity and Access Management, das Identitäten zentral verwaltet und Rechte nachvollziehbar vergibt und entzieht. Oft übernimmt ein Verzeichnisdienst wie Active Directory oder ein Cloud-Äquivalent diese Rolle.
+
+Zugriffsrechte sollten nicht ad hoc, sondern nach einem definierten Prozess vergeben werden: Wer darf Rechte beantragen? Wer genehmigt? Wer dokumentiert? Ohne diesen Prozess entstehen schnell Berechtigungen, die niemand mehr nachvollziehen kann.
+\newpage
+\textbf{Administratorenkonten}
+
+Administrative Konten sind wegen ihrer weitreichenden Rechte besonders attraktive Angriffsziele. Wichtige Maßnahmen:
+
+\begin{itemize}
+    \item \textbf{Separate Konten:} Administratoren sollten für ihre tägliche Arbeit ein normales Benutzerkonto verwenden und nur für administrative Aufgaben ein separates Adminkonto
+    \item \textbf{Keine gemeinsam genutzten Konten:} Jeder Administrator sollte sein eigenes Konto haben, damit Aktivitäten eindeutig nachvollzogen werden können
+    \item \textbf{Lokale Administratorrechte minimieren:} Auf Endgeräten sollten Nutzende keine lokalen Administratorrechte haben, sofern das betrieblich nicht erforderlich ist
+    \item \textbf{Privileged Access Management:} In größeren Organisationen kann ein dediziertes System helfen, administrative Zugänge zentral zu verwalten, Zugriffe zu protokollieren und zeitlich zu begrenzen
+\end{itemize}
+
+\textbf{Mehrfaktorauthentifizierung}
+
+Die Mehrfaktorauthentifizierung ist eine der einfachsten und wirkungsvollsten Maßnahmen überhaupt. Sie sollte mindestens für externe Zugänge, administrative Konten und besonders sensible Systeme verpflichtend sein. Viele Angriffe setzen voraus, dass ein kompromittiertes Passwort allein für den Zugang genügt. MFA erschwert dies deutlich.
+
+Die Einführung ist heute meist wenig aufwendig, da viele Systeme Standards wie TOTP-Apps oder Hardware-Token unterstützen. Beginnen Sie mit den risikoreichsten Bereichen und weiten Sie den Einsatz schrittweise aus.
+
+\textbf{Zugriffskontrolle in der Praxis}
+
+Ein pragmatischer Einstieg: Verschaffen Sie sich einen Überblick, wer Administratorrechte besitzt. Deaktivieren Sie nicht mehr genutzte Konten. Führen Sie MFA für externe Zugänge und Administratorkonten ein. Definieren Sie einen einfachen Prozess für das Beantragen und Entziehen von Berechtigungen. Das allein schafft eine deutlich bessere Ausgangslage als in vielen vergleichbaren Organisationen.
+\newpage
+\textbf{Management von Anlagen}
+
+Das strukturierte Erfassen, Klassifizieren und Verwalten aller IT-Assets ist eine eigenständige NIS2-Anforderung und zugleich Grundlage vieler anderer Sicherheitsmaßnahmen: Ohne vollständige Übersicht sind weder wirksames Risikomanagement noch ein Zugriffskontrollkonzept möglich. Das IT-Asset-Management im Kontext des Schwachstellenmanagements beschreibt das entsprechende Kapitel; hier geht es um die für Zugriffskontrolle und Personalsicherheit relevanten Aspekte.
+
+\textbf{Inventarisierung}
+
+Erster Schritt ist eine vollständige Bestandsaufnahme: Hardware (Server, Workstations, Netzwerkgeräte, mobile Endgeräte), Software (Betriebssysteme, Anwendungen, Lizenzen), Daten und Dienste (Cloud-Dienste, APIs, externe Zugriffspunkte). Viele Organisationen unterschätzen die tatsächliche Anzahl ihrer Assets, insbesondere bei Cloud-Diensten und mobilen Endgeräten.
+
+Häufig übersehen wird Schatten-IT: eigenständig genutzte, nicht freigegebene Cloud-Dienste, Tools oder Geräte, die in keiner Inventarliste auftauchen und daher nicht geschützt werden. Klare Richtlinien zu nicht genehmigten Diensten und offene Kommunikation über offiziell bereitstehende Tools reduzieren dieses Risiko.
+
+\textbf{Klassifizierung}
+
+Jedes Asset sollte nach seinem Schutzbedarf klassifiziert werden; oft genügt eine dreistufige Skala (normal, hoch, sehr hoch). Daraus ergibt sich, welche Schutzmaßnahmen nötig sind und wer zugreifen darf. Ein System mit Schutzbedarf „sehr hoch" benötigt strengere Zugriffskontrollen als ein öffentlicher Webserver ohne sensible Daten.
+
+\textbf{Asset Owner}
+
+Jede Anlage sollte einer verantwortlichen Person, dem Asset Owner, zugewiesen sein. Diese kennt den Schutzbedarf, sorgt für angemessene Schutzmaßnahmen und überprüft die Zugriffsrechte regelmäßig. In kleineren Organisationen ist oft eine Person für viele Assets zuständig. Entscheidend ist, dass die Verantwortung klar geregelt und dokumentiert ist.
+\newpage
+\textbf{Lebenszyklus und sichere Entsorgung}
+
+Das Asset-Management muss den gesamten Lebenszyklus abdecken, von der Beschaffung über den Betrieb bis zur Aussonderung. Gerade die Entsorgung wird oft unterschätzt: Nicht ordnungsgemäß gelöschte Datenträger können sensible Daten enthalten. Für ausgemusterte Hardware muss ein Prozess sicherstellen, dass Daten vor Weitergabe oder Entsorgung vollständig und unwiederbringlich gelöscht werden. Bei besonders sensiblen Systemen empfiehlt sich die physische Vernichtung der Datenträger.
+\newpage
+\textbf{Checkliste}
+\begin{checklist}
+\item Onboarding-Prozess definieren: Welche Zugänge, Geräte und Berechtigungen werden wann und durch wen bereitgestellt
+\item Offboarding-Prozess definieren: Vollständiges Entziehen aller Zugänge und Rückgabe von Geräten sicherstellen
+\item Offboarding-Checkliste erstellen, die alle relevanten Systeme und Dienste abdeckt
+\item Vertraulichkeitsvereinbarungen für Mitarbeitende mit Zugang zu sensiblen Daten einführen
+\item Sicherheitsrelevante Rollen und Verantwortlichkeiten dokumentieren
+\item Prozess für Vergabe und Entzug von Zugriffsrechten definieren und dokumentieren
+\item Least-Privilege-Prinzip umsetzen und bestehende Berechtigungen überprüfen
+\item Regelmäßige Überprüfung aller Zugriffsrechte terminieren, mindestens einmal jährlich
+\item Administratorkonten von normalen Benutzerkonten trennen
+\item Gemeinsam genutzte Administratorkonten durch individuelle Konten ersetzen
+\item Mehrfaktorauthentifizierung für externe Zugänge und Administratorkonten einführen
+\item Inaktive Benutzerkonten identifizieren und deaktivieren
+\item Vollständige Inventarisierung aller IT-Assets durchführen (Hardware, Software, Cloud-Dienste)
+\item Richtlinien zur Nutzung nicht genehmigter Dienste und Geräte definieren (Schatten-IT)
+\item Assets nach Schutzbedarf klassifizieren
+\item Asset Owner für alle kritischen Anlagen benennen und dokumentieren
+\item Prozess für sichere Entsorgung von Hardware und Datenträgern definieren
+\end{checklist}

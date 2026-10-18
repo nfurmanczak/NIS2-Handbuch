@@ -1,0 +1,93 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,left=2.5cm,right=2.5cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{graphicx, wrapfig, caption, fancyhdr, setspace, parskip}
+\usepackage[nonumberlist]{glossaries}
+\usepackage[backend=biber, style=authoryear, urldate=long, url=true, doi=true, natbib=true, maxbibnames=999]{biblatex}
+\usepackage{xcolor} 
+\usepackage{hyperref}
+\usepackage{tocloft}
+\usepackage{helvet}
+\usepackage{tocloft}
+\usepackage{multicol}
+\usepackage[ngerman]{babel}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{wasysym}
+\usepackage{amssymb}
+\usepackage[most]{tcolorbox}
+\sloppy 
+
+\setlength{\cftbeforesecskip}{1pt} 
+\setlength{\cftbeforesubsecskip}{1pt}
+\newlist{checklist}{itemize}{3}
+\setlist[checklist]{label=$\square$, leftmargin=*}
+
+
+
+\renewcommand{\familydefault}{\sfdefault}
+\renewcommand{\cftloftitlefont}{\small\bfseries}
+\renewcommand{\cftlottitlefont}{\small\bfseries}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\contentsname}{Inhalt}
+\onehalfspacing
+\frenchspacing
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot[C]{} 
+\fancyfoot[R]{\thepage}
+
+\makeglossaries
+\addbibresource{reference.bib}
+\glstoctrue
+
+\begin{document}
+
+\begin{titlepage}
+    \thispagestyle{empty}
+    \begin{center}
+
+        {\Huge\bfseries
+        Handlungsempfehlung zu NIS2 \\EU-Richtlinie 2022/2555 \\[1.5cm]}
+
+        \vspace{8cm}
+
+
+        \noindent\rule{\textwidth}{1.2pt} \\[1cm]
+
+        \begin{tcolorbox}[colframe=white, colback=gray!10, boxrule=0.8pt, width=0.9\textwidth, sharp corners]
+            \vspace{0.5cm}
+            \textbf{Autor:} \href{mailto:nikolai@furmanczak.de}{Nikolai Furmanczak} \hfill \textbf{Datum:} \today \hfill  \textbf{Version:} 1.0
+            \vspace{0.5cm}
+        \end{tcolorbox}
+
+        \vfill
+
+
+    \end{center}
+\end{titlepage}
+
+\pagenumbering{Roman}
+\printglossaries
+
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+\input{Inhalt/Einleitung.tex}
+\input{Inhalt/Risikomanagement.tex}
+\input{Inhalt/Schulungen.tex}
+\input{Inhalt/Geschaeftsleitungsschulung.tex}
+\input{Inhalt/Cyberhygiene.tex}
+\input{Inhalt/Authentifizierung_Kommunikation.tex}
+\input{Inhalt/Schwachstellenmanagement.tex}
+\input{Inhalt/Personalsicherheit_Zugriffskontrolle.tex}
+\input{Inhalt/Lieferkette.tex}
+\input{Inhalt/Verschluesselung.tex}
+\input{Inhalt/Sicherheitsvorfaelle.tex}
+\input{Inhalt/Notfall_Krisenmanagement.tex}
+\clearpage
+\printbibliography[heading=bibintoc]
+
+\end{document}

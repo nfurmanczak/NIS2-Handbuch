@@ -1,0 +1,244 @@
+\newpage
+\subsection{Notfallplan für die Aufrechterhaltung und Wiederherstellung des Betriebs}
+
+\textbf{Anforderung:} Die Organisation muss einen Notfallplan erstellen, der bei IT-Sicherheitsvorfällen die Aufrechterhaltung und Wiederherstellung des Betriebs sicherstellt. Er basiert auf der Risikobewertung und legt fest, wie kritische Geschäftsprozesse und IT-Systeme im Notfall weiterlaufen oder schnellstmöglich wiederhergestellt werden.
+
+Ein IT-Sicherheitsvorfall kann den gesamten Betrieb stören: Ransomware verschlüsselt wichtige Daten, ein DDoS-Angriff macht den Online-Shop unerreichbar. Ohne durchdachten Notfallplan steht die Organisation hilflos da und verliert Zeit, Geld und Reputation. Der Notfallplan beschreibt, was im Ernstfall zu tun ist, wer wofür verantwortlich ist und in welcher Reihenfolge der Betrieb wiederhergestellt wird.
+
+Er ist nicht mit dem Krisenmanagement zu verwechseln: Der Notfallplan beschreibt die konkreten technischen und organisatorischen Wiederherstellungsschritte, das Krisenmanagement regelt Koordination, Kommunikation und Entscheidungsfindung während einer Krise.
+
+\subsubsection{Business Impact Analyse (BIA)}
+Vor dem Notfallplan muss die Organisation verstehen, wie sich IT-Sicherheitsvorfälle auf den Betrieb auswirken können. Dazu dient die Business Impact Analyse (BIA), die folgende Fragen beantwortet:
+
+\begin{itemize}
+    \item Welche Geschäftsprozesse sind für den Betrieb kritisch? (z.B. Auftragsabwicklung, Produktion, Kundensupport)
+    \item Welche IT-Systeme und Anwendungen unterstützen diese Prozesse? (z.B. ERP-System, E-Mail-Server, Produktionssteuerung)
+    \item Wie lange kann die Organisation ohne diese Prozesse und Systeme funktionieren?
+    \item Welche finanziellen, rechtlichen und Reputationsschäden entstehen bei einem Ausfall?
+    \item Welche Abhängigkeiten bestehen zwischen Prozessen, Systemen und externen Dienstleistern?
+\end{itemize}
+\newpage
+Aus der BIA ergeben sich die Kontinuitätsanforderungen: wie schnell ein System nach einem Vorfall wieder verfügbar sein muss und wie viel Datenverlust maximal akzeptabel ist. Zentrale Kennzahlen sind:
+
+\begin{itemize}
+    \item \textbf{Recovery Time Objective (RTO):} Die maximal tolerierbare Ausfallzeit eines Systems. Beispiel: Das ERP-System muss innerhalb von 4 Stunden wieder laufen.
+    \item \textbf{Recovery Point Objective (RPO):} Der maximal tolerierbare Datenverlust, gemessen in Zeit. Beispiel: Es dürfen maximal die Daten der letzten 24 Stunden verloren gehen.
+\end{itemize}
+
+Die Ergebnisse der BIA fließen direkt in den Notfallplan ein und bestimmen die Wiederherstellungsprioritäten.
+\newpage
+\subsubsection{Notfallplan}
+
+Der Notfallplan muss folgende Elemente enthalten:
+
+\textbf{Zweck, Umfang und Zielgruppe:} Wofür ist der Plan gedacht, welche Bereiche deckt er ab, und wer soll ihn nutzen?
+
+\textbf{Rollen und Verantwortlichkeiten:} Es muss klar sein, wer im Notfall wofür zuständig ist. Typische Rollen sind:
+\begin{itemize}
+    \item Incident Commander: Koordiniert die Wiederherstellung und trifft Entscheidungen
+    \item IT-Team: Führt technische Wiederherstellungsmaßnahmen durch
+    \item Kommunikationsverantwortlicher: Informiert intern und extern
+    \item Geschäftsleitung: Genehmigt kritische Entscheidungen und Ressourcen
+\end{itemize}
+
+\textbf{Wichtige Kontaktangaben und Kommunikationskanäle:} Eine aktuelle Liste aller relevanten internen und externen Kontakte sowie alternative Kanäle für den Ausfall der primären (E-Mail, Telefon, Instant Messaging).
+
+\textbf{Bedingungen für Aktivierung und Deaktivierung:} Wann wird der Plan aktiviert, und wann wird er deaktiviert, d.\,h. wann gilt der Normalbetrieb als wiederhergestellt?
+
+\textbf{Reihenfolge der Wiederherstellung:} Nicht alles kann gleichzeitig wiederhergestellt werden. Der Plan legt auf Basis der BIA fest, welche Systeme und Prozesse Priorität haben.
+
+\textbf{Wiederherstellungspläne für bestimmte Betriebsabläufe:} Für kritische Systeme und Prozesse beschreiben detaillierte Pläne Schritt für Schritt die Wiederherstellung: welche Backups eingespielt, welche Konfigurationen vorgenommen und wie die Funktionsfähigkeit getestet wird. Jeder Plan enthält die zugehörigen RTO- und RPO-Werte.
+
+\textbf{Erforderliche Ressourcen:} Alle für die Wiederherstellung benötigten Ressourcen wie Hardware, Software und externe Dienstleister.
+
+\textbf{Wiederherstellung nach vorübergehenden Maßnahmen:} Oft werden zunächst Notlösungen genutzt, um den Betrieb schnell wieder aufzunehmen (z.B. provisorischer Server, manuelle Prozesse). Der Plan beschreibt, wie und wann auf die regulären Systeme zurückgewechselt wird.
+\newpage
+\textbf{Testen, Überprüfen und Aktualisieren}
+Ein Notfallplan, der nur auf dem Papier existiert, ist wertlos. NIS2 verlangt Tests in geplanten Zeitabständen; empfohlen wird ein jährlicher Test. Zusätzlich ist der Plan nach erheblichen Sicherheitsvorfällen oder wesentlichen Änderungen an IT-Infrastruktur, Geschäftsprozessen oder Risikosituation zu testen und zu aktualisieren.
+
+Es gibt verschiedene Testmethoden:
+\begin{itemize}
+    \item \textbf{Tabletop-Übung:} Das Team geht den Plan theoretisch durch und bespricht die einzelnen Schritte.
+    \item \textbf{Simulationstest:} Ein realistisches Szenario wird simuliert, aber ohne echte Systeme zu beeinträchtigen.
+    \item \textbf{Volltest:} Tatsächliche Systeme werden heruntergefahren und der Wiederherstellungsprozess real durchgeführt.
+\end{itemize}
+
+Die Testergebnisse sind zu dokumentieren; erkannte Schwachstellen, Fehler und Verbesserungsmöglichkeiten fließen in die Aktualisierung des Plans ein.
+\newpage
+\textbf{Checkliste}
+\begin{checklist}
+    \item Business Impact Analyse durchführen und kritische Prozesse sowie Systeme identifizieren
+    \item RTO- und RPO-Werte für kritische Systeme festlegen
+    \item Notfallplan erstellen mit allen geforderten Elementen (Rollen, Kontakte, Wiederherstellungsreihenfolge, etc.)
+    \item Verantwortlichkeiten klar definieren und kommunizieren
+    \item Kontaktlisten aktuell halten und alternative Kommunikationskanäle festlegen
+    \item Wiederherstellungspläne für kritische Systeme detailliert ausarbeiten
+    \item Benötigte Ressourcen (Hardware, Software, Backups, Dienstleister) dokumentieren
+    \item Regelmäßige Tests des Notfallplans durchführen (mindestens alle 1-2 Jahre)
+    \item Testergebnisse dokumentieren und Verbesserungen in den Plan einarbeiten
+    \item Plan nach Sicherheitsvorfällen oder wesentlichen Änderungen aktualisieren
+\end{checklist}
+
+\newpage
+\subsection{Backup-, Sicherungs- und Redundanzmanagement}
+
+\textbf{Anforderung:} Die Organisation muss ein funktionierendes Backup-Management aufbauen, das alle wichtigen Daten regelmäßig sichert und im Notfall schnell wiederherstellbar macht. Zusätzlich sind Redundanzen für kritische Systeme, Ressourcen und Personal zu schaffen, um die Verfügbarkeit auch bei Ausfällen zu gewährleisten.
+
+
+\subsubsection{Backup-Strategie}
+Die Backup-Strategie legt fest, was wie, wann und wo gesichert wird. Sie basiert auf Risikobewertung und Notfallplan. Der Sicherungsplan enthält folgende Elemente:
+
+\textbf{Wiederherstellungszeiten (RTO):} Für jedes System bzw. jede Gruppe wird festgelegt, wie schnell es nach einem Vorfall wieder verfügbar sein muss und damit auch, wie schnell das Backup wiederherstellbar sein muss.
+
+\textbf{Vollständigkeit und Genauigkeit der Backups:} Backups müssen alle relevanten Daten enthalten, einschließlich Konfigurationsdaten, Datenbanken, Dateien und Systemeinstellungen, auch Daten in Cloud-Diensten.
+
+\textbf{Speicherung der Backups:} Backups müssen an sicheren Orten gespeichert werden, die folgende Anforderungen erfüllen:
+\begin{itemize}
+    \item \textbf{Getrennte Netzwerke:} Backups sollten in einem separaten geschützten Netzwerk gespeichert werden, damit ein Ransomware-Angriff auf das Produktionsnetz die Backupsysteme nicht erreicht. Erreicht wird dies häufig durch Offline-Backups (z.B. Bänder oder externe Festplatten), Air-Gap-Backups (physisch getrennte Systeme) oder eine Demilitarisierte Zone (DMZ).
+    \item \textbf{Geografische Trennung:} Backups sollten zusätzlich an einem anderen Standort als die Produktionssysteme liegen, als Schutz vor Bränden, Überschwemmungen oder anderen Katastrophen.
+    \item \textbf{3-2-1-Regel:} Eine bewährte Faustregel für Backups lautet: 3 Kopien der Daten, auf 2 verschiedenen Medientypen, davon 1 Kopie an einem externen Standort.
+\end{itemize}
+
+\textbf{Zugangskontrollen zu Backups:} Der physische (z.B. zu Backup-Servern oder Bändern im Rechenzentrum) und logische Zugriff auf Backups muss streng kontrolliert und geschützt werden.
+
+\textbf{Wiederherstellung von Daten:} Der Sicherungsplan beschreibt die technischen Schritte der Wiederherstellung (Einspielen, Konfiguration, Tests) und die organisatorischen Abläufe (wer autorisiert Wiederherstellungen, wie wird dokumentiert).
+\newpage
+\textbf{Aufbewahrungsfristen:} Backups sind gemäß geschäftlicher und regulatorischer Anforderungen aufzubewahren. Manche Daten müssen jahrelang gespeichert werden (z.B. Buchhaltungsdaten), andere können bald gelöscht werden. Die Fristen müssen klar definiert und umgesetzt werden.
+
+\textbf{Integritätsprüfungen und Tests}
+Ein Backup, das im Ernstfall nicht funktioniert, ist nutzlos. Backups müssen daher regelmäßig auf Integrität geprüft werden:
+\begin{itemize}
+    \item \textbf{Technische Integritätsprüfung:} Automatische Prüfung, ob Backup-Dateien vollständig und unbeschädigt sind (z.B. per Checksummen oder Hash-Werten). Bei großen, dynamischen Daten wie Datenbanken ist die Validierung schwierig, da sich die Quelle ständig ändert und kein direkter Vergleich möglich ist. Hier lohnt es sich, physische und logische Backups zu kombinieren und Anzahl sowie Größe der Backups zu überwachen.
+    \item \textbf{Wiederherstellungstests:} Regelmäßige Tests, ob Backups tatsächlich wiederhergestellt werden können. Empfohlen sind quartalsweise Tests für kritische Systeme und jährlich ein Volltest. Dabei wird ein Backup tatsächlich eingespielt und die Funktionsfähigkeit des Systems geprüft.
+\end{itemize}
+Die Testergebnisse sind zu dokumentieren. Bei Problemen (z.B. unvollständige Backups oder langsame Wiederherstellung) müssen Maßnahmen ergriffen werden.
+
+\newpage
+\subsubsection{Redundanzmanagement}
+Redundanz bedeutet, dass kritische Komponenten mehrfach vorhanden sind. Fällt eine aus, übernimmt automatisch die redundante Komponente; so werden Ausfallzeiten vermieden und ein unterbrechungsfreier Betrieb ermöglicht.
+
+Folgende Elemente sollten redundant ausgelegt werden:
+\textbf{Netz- und Informationssysteme:} Kritische Server, Netzwerkkomponenten (Router, Switches, Firewalls) und Speichersysteme, zum Beispiel:
+\begin{itemize}
+    \item Datenbankcluster mit 3, 5 oder mehr Nodes
+    \item Redundante Internetanbindungen über verschiedene Provider
+    \item ECC-Speicher, Festplatten im RAID, redundante Netzteile, etc.
+    \item Spanning Tree oder redundante Switches
+    \item USV-Systeme oder redundante Kühlsysteme
+\end{itemize}
+
+\textbf{Anlagen und Werte:} Betriebsstätten (z.B. ein zweites kleineres Büro oder Home-Office-Möglichkeiten), Ausrüstung (z.B. Ersatz-Laptops, Ersatz-Netzwerkgeräte) und Verbrauchsmaterial (z.B. Ersatzteile für kritische Hardware wie Netzteile oder Festplatten).
+\textbf{Personal:} Für kritische Rollen müssen Vertretungsregelungen existieren; kein System darf von einer einzigen Person abhängen. Erreicht wird dies durch Kreuztraining, bei dem mehrere Mitarbeitende für dieselben Aufgaben ausgebildet werden.
+
+\textbf{Kommunikationskanäle:} Neben den primären Mitteln (E-Mail, Telefon) müssen Alternativen verfügbar sein (z.B. Mobiltelefon, Messenger, Satellitentelefon bei kritischen Infrastrukturen).
+
+\textbf{Überwachung und Anpassung}
+Die Anforderungen an Backups und Redundanzen ändern sich: Neue Systeme kommen hinzu, Geschäftsprozesse und Risiken entwickeln sich weiter. Backups und Redundanzen sind daher regelmäßig zu überprüfen und anzupassen. Dies umfasst:
+
+\begin{itemize}
+    \item Überwachung der tatsächlichen Backup-Durchführung (werden alle Backups erfolgreich erstellt?)
+    \item Überwachung des Speicherplatzes für Backups
+    \item Überprüfung, ob neue Systeme in die Backup-Strategie aufgenommen wurden
+    \item Anpassung der RTO/RPO-Werte bei veränderten Geschäftsanforderungen
+    \item Evaluierung, ob die vorhandenen Redundanzen noch ausreichend sind
+\end{itemize}
+\newpage
+\textbf{Checkliste}
+\begin{checklist}
+    \item Backup-Strategie auf Basis der Risikobewertung und des Notfallplans erstellen
+    \item RTO- und RPO-Werte für alle kritischen Systeme definieren
+    \item Festlegen, welche Daten gesichert werden müssen (inkl. Konfigurationsdaten und Cloud-Daten)
+    \item Speicherorte für Backups definieren (getrennte Netzwerke, geografische Trennung)
+    \item 3-2-1-Regel umsetzen (3 Kopien, 2 Medientypen, 1 externe Kopie)
+    \item Zugangskontrollen zu Backups implementieren (physisch und logisch)
+    \item Verschlüsselung von Backups einrichten
+    \item Aufbewahrungsfristen für Backups festlegen und umsetzen
+    \item Regelmäßige Integritätsprüfungen der Backups durchführen
+    \item Quartalsweise Wiederherstellungstests für kritische Systeme durchführen
+    \item Redundanzen für kritische Systeme, Anlagen, Personal und Kommunikationskanäle schaffen
+    \item Vertretungsregelungen für kritische Rollen etablieren (Kreuztraining)
+    \item Überwachung der Backup- und Redundanzsysteme einrichten
+    \item Regelmäßige Überprüfung und Anpassung der Backup-Strategie bei Änderungen
+\end{checklist}
+
+\newpage
+\subsection{Krisenmanagement}
+\textbf{Anforderung:} Die Organisation muss ein Krisenmanagementverfahren etablieren, das bei schwerwiegenden IT-Sicherheitsvorfällen Koordination, Kommunikation und Entscheidungsfindung regelt. Es stellt sicher, dass alle relevanten Personen informiert, Verantwortlichkeiten klar sind und die Organisation handlungsfähig bleibt.
+Bei einem schwerwiegenden Vorfall, etwa einem großflächigen Ransomware-Angriff, einem Datenleck oder einem Totalausfall der IT, reicht technisches Know-how allein nicht. Es müssen schnell Entscheidungen getroffen, Teams koordiniert und intern wie extern kommuniziert werden. Das Krisenmanagement ist die Kommandozentrale, die all das steuert und die Handlungsfähigkeit auch unter enormem Druck sichert.
+Der Notfallplan beschreibt, \textit{was} zur Wiederherstellung getan werden muss; das Krisenmanagement regelt, \textit{wer} entscheidet, \textit{wie} kommuniziert und \textit{wie} die Gesamtsituation koordiniert wird.
+
+\textbf{Krisenmanagementverfahren}
+Das Krisenmanagementverfahren muss mindestens folgende Elemente abdecken:
+
+\textbf{Rollen und Verantwortlichkeiten:} In einer Krise muss jeder wissen, wer wofür verantwortlich ist. Ein typischer Krisenstab umfasst:
+\begin{itemize}
+    \item \textbf{Krisenmanager / Incident Commander:} Leitet den Krisenstab, trifft Entscheidungen, koordiniert alle Aktivitäten. Meist ein Mitglied der Geschäftsleitung oder ein erfahrener IT-Manager.
+    \item \textbf{IT-Koordinator:} Verantwortlich für die technische Wiederherstellung, koordiniert das IT-Team, setzt den Notfallplan um.
+    \item \textbf{Kommunikationsverantwortlicher:} Zuständig für interne und externe Kommunikation, informiert Mitarbeiter, Kunden, Partner, Medien und Behörden.
+    \item \textbf{Rechts- und Compliance-Berater:} Prüft rechtliche Anforderungen (z.B. Meldepflichten an Behörden, Datenschutzverletzungen), berät zu Haftungsfragen.
+    \item \textbf{Geschäftsleitung:} Trifft strategische Entscheidungen, genehmigt größere Ausgaben, repräsentiert die Organisation nach außen.
+    \item \textbf{Externe Dienstleister:} IT-Dienstleister, Forensik-Experten, Rechtsanwälte, Versicherungen, je nach Art und Schwere des Vorfalls.
+\end{itemize}
+\newpage
+Für jede Rolle sind konkrete Aufgaben, Befugnisse und Vertretungsregelungen festzulegen. Das Verfahren beschreibt zudem die Schritte und ihre Reihenfolge (z.B. Krisenstab einberufen, Lage bewerten, Notfallplan aktivieren, Behörden informieren, externe Experten hinzuziehen).
+Externe Anbieter sind einzubinden, soweit sie für die Wiederherstellung erforderlich sind; dies sollte vertraglich geregelt sein (z.B. SLAs mit definierten Reaktionszeiten).
+
+\textbf{Kommunikationsmittel und -kanäle:} Funktionierende Kommunikation ist in einer Krise entscheidend. Das Verfahren definiert:
+\begin{itemize}
+    \item \textbf{Interne Kommunikation:} Wie werden Mitarbeiter informiert? Über welche Kanäle (E-Mail, Intranet, Telefon, Messenger)? Was wird kommuniziert und wie oft? Wer ist für die interne Kommunikation verantwortlich?
+    \item \textbf{Externe Kommunikation:} Wie werden Kunden, Partner, Lieferanten und gegebenenfalls die Öffentlichkeit informiert? Wer spricht mit den Medien? Welche Informationen dürfen nach außen gegeben werden?
+    \item \textbf{Kommunikation mit Behörden:} Das BSI und andere zuständige Behörden müssen bei erheblichen Sicherheitsvorfällen informiert werden. Das Verfahren regelt, wer für die Meldung zuständig ist, welche Fristen gelten und welche Informationen übermittelt werden müssen. NIS2 unterscheidet zwischen obligatorischen Mitteilungen (z.B. Meldung erheblicher Sicherheitsvorfälle innerhalb von 24 Stunden) und fakultativen Mitteilungen (z.B. Hinweise auf Schwachstellen oder Bedrohungen).
+    \item \textbf{Alternative Kommunikationskanäle:} Falls die primären Kommunikationsmittel ausfallen (z.B. E-Mail-Server down, Telefonanlage nicht erreichbar), müssen Alternativen verfügbar sein (z.B. private Mobiltelefone, externe Messenger-Dienste, Notfall-Hotline).
+\end{itemize}
+
+Unverzichtbar ist eine aktuelle Kontaktliste aller relevanten internen und externen Ansprechpartner, die regelmäßig aktualisiert und an mehreren Orten (digital und analog) verfügbar ist, damit sie auch im Krisenfall zugänglich bleibt.
+\newpage
+\textbf{Maßnahmen zur Aufrechterhaltung der Sicherheit:} Gerade in einer Krise ist die Organisation besonders verwundbar; die IT-Sicherheit darf daher nicht vernachlässigt werden. Das Verfahren muss sicherstellen, dass auch unter Zeitdruck angemessene Sicherheitsmaßnahmen ergriffen werden, zum Beispiel:
+\begin{itemize}
+    \item Bei einem Ransomware-Angriff werden betroffene Systeme sofort vom Netzwerk getrennt, um eine Ausbreitung zu verhindern.
+    \item Verdächtige Accounts werden gesperrt, bis die Situation geklärt ist.
+    \item Notfall-Passwörter werden nach der Krise geändert.
+    \item Externe Dienstleister erhalten nur temporäre und eingeschränkte Zugriffe.
+    \item Forensische Sicherung von Beweisen, bevor Systeme wiederhergestellt werden.
+\end{itemize}
+
+\textbf{Verwaltung von Informationen von Behörden und CSIRTs:} Behörden wie das BSI und Computer Security Incident Response Teams (CSIRTs) liefern wertvolle Informationen, etwa Warnungen vor aktuellen Bedrohungen, Hinweise auf Schwachstellen oder Empfehlungen für Gegenmaßnahmen. Die Organisation braucht ein Verfahren, um diese zu empfangen, zu bewerten und zu nutzen.
+
+Das Verfahren regelt:
+\begin{itemize}
+    \item Wer empfängt Informationen von Behörden und CSIRTs? (z.B. IT-Sicherheitsbeauftragter)
+    \item Wie werden diese Informationen intern ausgewertet und verteilt?
+    \item Wie wird bewertet, ob und welche Maßnahmen ergriffen werden müssen?
+    \item Wie wird die Umsetzung von Empfehlungen verfolgt?
+\end{itemize}
+
+Beispiel: Das BSI warnt vor einer neuen Ransomware-Variante, die gezielt die eigene Branche angreift. Der IT-Sicherheitsbeauftragte bewertet die Gefahr für die eigenen Systeme, informiert das IT-Team und veranlasst Schutzmaßnahmen (z.B. Update der Antivirensoftware, Schärfung der Firewall-Regeln, Sensibilisierung der Mitarbeitenden).
+\newpage
+\textbf{Testen und Aktualisieren des Krisenmanagementplans:}
+Wie der Notfallplan muss auch der Krisenmanagementplan regelmäßig getestet werden, empfohlen jährlich, bei kleineren Organisationen mindestens alle zwei Jahre. Zusätzlich ist er nach erheblichen Sicherheitsvorfällen oder wesentlichen Änderungen an Organisationsstruktur, Geschäftsprozessen oder Risikosituation zu überprüfen und zu aktualisieren.
+Testmethoden für das Krisenmanagement:
+\begin{itemize}
+    \item \textbf{Tabletop-Übung:} Der Krisenstab trifft sich und geht ein fiktives Szenario theoretisch durch. Diskutiert werden Entscheidungen, Kommunikationswege und Abläufe. Kostengünstig und gut geeignet, um Lücken im Plan zu identifizieren.
+    \item \textbf{Simulationsübung:} Ein realistisches Krisenszenario wird simuliert, der Krisenstab wird aktiviert und die Kommunikations- und Entscheidungsprozesse werden real durchlaufen. Höherer Aufwand, aber sehr effektiv.
+    \item \textbf{Vollübung:} Eine umfassende Übung, bei der auch der Notfallplan getestet wird (Systeme werden tatsächlich heruntergefahren und wiederhergestellt) und der Krisenstab alle Schritte real durchführt. Höchster Aufwand, aber maximale Lerneffekte.
+\end{itemize}
+Die Testergebnisse werden dokumentiert; erkannte Schwachstellen, Kommunikationsprobleme und Unklarheiten bei Rollen und Verantwortlichkeiten fließen in die Aktualisierung ein, ebenso die Erkenntnisse aus realen Sicherheitsvorfällen (Lessons Learned).
+\newpage
+\textbf{Checkliste}
+\begin{checklist}
+    \item Krisenstab mit klaren Rollen und Verantwortlichkeiten definieren (Krisenmanager, IT-Koordinator, Kommunikationsverantwortlicher, etc.)
+    \item Vertretungsregelungen für alle Rollen festlegen
+    \item Aufgaben und Befugnisse für jede Rolle dokumentieren
+    \item Schritt-für-Schritt-Ablauf für Krisensituationen erstellen
+    \item Externe Dienstleister und deren Rollen in Krisenmanagement einbinden
+    \item Kommunikationskanäle für interne und externe Kommunikation definieren
+    \item Alternative Kommunikationsmittel für Ausfallszenarien festlegen
+    \item Kontaktliste mit allen relevanten Ansprechpartnern erstellen und aktuell halten
+    \item Verfahren für Meldungen an Behörden und CSIRTs festlegen (Fristen, Inhalte, Zuständigkeiten)
+    \item Maßnahmen zur Aufrechterhaltung der IT-Sicherheit während Krisen definieren
+    \item Verfahren zur Verwaltung und Nutzung von Informationen von Behörden/CSIRTs etablieren
+    \item Regelmäßige Tests des Krisenmanagementplans durchführen (mindestens alle 1-2 Jahre)
+    \item Testergebnisse dokumentieren und Plan auf Basis der Erkenntnisse aktualisieren
+    \item Lessons Learned aus realen Vorfällen in den Plan einarbeiten
+    \item Plan nach organisatorischen Änderungen oder erheblichen Vorfällen überprüfen
+\end{checklist}

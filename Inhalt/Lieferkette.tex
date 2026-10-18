@@ -1,0 +1,101 @@
+\newpage
+\subsection{Sicherheit der Lieferkette}
+\textbf{Anforderungen:} NIS2 fordert die Sicherheit der Lieferkette einschließlich sicherheitsbezogener Aspekte der Beziehungen zu unmittelbaren externen Dienstleistern. Ziel ist es, Verfügbarkeitsrisiken und Supply-Chain-Angriffe zu verhindern.
+
+Die Sicherheit der Lieferkette umfasst zwei Aspekte:
+\begin{itemize}
+    \item \textbf{Verfügbarkeitsrisiken:} Der Ausfall eines Dienstleisters gefährdet die eigene Geschäftstätigkeit (z.\,B. Cloud-Anbieter ist nicht erreichbar)
+    \item \textbf{Sicherheitsrisiken:} Ein kompromittierter Dienstleister wird für Angriffe auf die eigene Organisation genutzt (Supply-Chain-Attacken)
+\end{itemize}
+
+Voraussetzung für die Bewertung ist eine vollständige Übersicht über alle kritischen Dienstleister und ihre Leistungen; ohne diese Transparenz lassen sich weder Verfügbarkeits- noch Sicherheitsrisiken bewerten. Die systematische Erfassung und Dokumentation aller NIS2-relevanten Dienstleister ist daher unverzichtbar. Empfehlenswert ist, die Lieferkette nach einem Business Continuity Management bzw. einer Business Impact Analyse anzugehen, da diese die Abhängigkeiten kritischer Geschäftsprozesse von externen Dienstleistern aufzeigt.
+
+\textbf{Kategorisierung der Dienstleister:} Bewerten Sie Ihre Dienstleister nach beiden Risikoaspekten:
+\begin{itemize}
+    \item \textbf{Verfügbarkeitskritische Dienstleister:} Deren Ausfall Ihre Produktion oder Verfügbarkeit direkt beeinträchtigt (Cloud-Anbieter, Rechenzentren, kritische SaaS-Anwendungen)
+    \item \textbf{Sicherheitskritische Dienstleister:} Die Zugriff auf Ihre IT-Infrastruktur haben oder sensible Daten verarbeiten (Managed Service Provider, IT-Support, Softwareentwickler)
+    \item \textbf{Beide Kategorien:} Viele Dienstleister fallen in beide Kategorien und erfordern besondere Aufmerksamkeit
+\end{itemize}
+
+NIS2 fordert explizit, Supply-Chain-Attacken zu verhindern, bei denen Angreifer zunächst einen vertrauenswürdigen Drittanbieter kompromittieren, um über diesen „Umweg" an das eigentliche Ziel zu gelangen. Potenzielle Angriffe und ihre Auswirkungen müssen bewertet werden.
+\newpage
+\textbf{Herausforderung der unklaren Anforderungen:} Welche Sicherheitsmaßnahmen von Dienstleistern zu fordern sind, lässt das NIS2-Umsetzungsgesetz bewusst offen. Das BSI verlangt lediglich „möglichst konkrete Anforderungen an die Cybersicherheit" und überlässt die Definition den Unternehmen. Explizit genannt werden nur:
+\begin{itemize}
+    \item Risikomanagementmaßnahmen
+    \item Maßnahmen zur Bewältigung von Cybersicherheitsvorfällen
+    \item Patchmanagement
+    \item Prinzipien wie Security by Design oder Security by Default
+\end{itemize}
+
+Diese Unsicherheit erfordert einen pragmatischen Ansatz. Zertifikate wie ISO 27001, BSI IT-Grundschutz, SOC 2, TISAX etc. bieten eine gute Grundlage und sind als Nachweis gut dokumentierbar. Die individuelle Bewertung eines Dienstleisters kann aber auch ergeben, dass ein Zertifikat nicht ausreicht.
+\newpage
+Nach Auslegung des BSI sollten Dienstleister NIS2-betroffener Unternehmen selbst mindestens die Anforderungen aus Artikel 21 der NIS2-Richtlinie umsetzen. Als Orientierung empfiehlt das BSI das 30-seitige Dokument „Best-Practice-Empfehlungen für Anforderungen an Lieferanten zur Gewährleistung der Informationssicherheit in Kritischen Infrastrukturen" der UP KRITIS mit folgenden Themen:
+\begin{itemize}
+    \item Verantwortung des Auftraggebers und Auftragnehmers
+    \item Vulnerability-Management
+    \item Patch-Management
+    \item Systemhärtung (Minimale Prinzipien, Sicherheitsstandards, Passwörter etc.)
+    \item Fernzugang für Drittanbieter
+    \item Anforderungen an Softwareentwicklungsprozesse
+    \item Einsatz von Kryptografie
+    \item Sicherheitsanforderungen an den IT-Betrieb
+    \begin{itemize}
+        \item Informationssicherheitsprozesse/ISMS
+        \item Zugriffschutz und Rechtevergabe
+        \item Asset-Management
+        \item Personalsicherheit
+        \item Physische Sicherheit
+        \item Netzwerksicherheit und operationelle Sicherheit
+        \item Security-Incident-Management
+    \end{itemize}
+    \item Dokumentation
+    \item Informationspflicht über sicherheitsrelevante Vorfälle
+    \item Nicht-technische Sicherheit
+    \begin{itemize}
+        \item Organisation der Informationssicherheit
+        \item Asset-Management
+        \item Human-Resources-Security
+        \item Audits
+    \end{itemize}
+\end{itemize}
+
+Die Themen decken sich größtenteils mit den NIS2-Vorgaben. Lesen Sie das Dokument, berücksichtigen Sie es bei der Bewertung von Dienstleistern und dokumentieren Sie, dass Sie sich daran orientiert haben.
+\newpage
+\textbf{Praktisches Vorgehen bei Dienstleister-Bewertungen:}
+
+\textbf{1. Erfassung:} Definieren Sie einen strukturierten Prozess zur Erfassung aller NIS2-relevanten Dienstleister. Nicht alle Dienstleister müssen erfasst werden, aber klare Bewertungskriterien (z.\,B. Zugriff auf IT-Systeme, Verarbeitung kritischer Daten, Einfluss auf Geschäftsprozesse) sichern Kontinuität und verhindern, dass kritische Dienstleister übersehen werden.
+
+Implementieren Sie folgende Teilprozesse:
+\begin{itemize}
+    \item \textbf{Regelmäßige Überprüfung:} Die Dienstleisterliste sollte mindestens jährlich auf Korrektheit, Vollständigkeit und Aktualität überprüft werden
+    \item \textbf{Onboarding neuer Dienstleister:} Neue Dienstleister werden vor Vertragsabschluss systematisch nach den definierten Kriterien bewertet und bei Relevanz erfasst
+    \item \textbf{Offboarding:} Nach Beendigung der Geschäftsbeziehung werden Dienstleister zeitnah aus dem System entfernt und zugehörige Zugriffsrechte widerrufen
+\end{itemize}
+
+Dokumentieren Sie Bewertungskriterien und Verantwortlichkeiten für jeden Teilprozess.
+
+\textbf{2. Priorisierung:} Konzentrieren Sie sich zunächst auf Dienstleister, die Teil Ihrer IT-Infrastruktur sind oder direkten Einfluss darauf haben, etwa Cloud-Anbieter oder Rechenzentren.
+
+\textbf{3. Gestaffelte Anforderungen:} Die Anforderungstiefe richtet sich nach der Kritikalität des Dienstleisters:
+\begin{itemize}
+    \item \textbf{Basis-Level:} Nachweis gültiger Sicherheitszertifikate (ISO 27001, SOC 2 etc.)
+    \item \textbf{Erweitert:} Zusätzliche Dokumentation zu spezifischen Sicherheitsmaßnahmen
+    \item \textbf{Detailliert:} Umfassende Sicherheitsbewertung für höchstkritische Dienstleister
+\end{itemize}
+
+\textbf{4. Kommunikation mit Dienstleistern:} Weisen Sie bei Anfragen auf die NIS2-Richtlinie hin. Unternehmen außerhalb der EU kennen NIS2 möglicherweise nicht, obwohl sie durch ihre Dienste in der EU betroffen sein könnten. Fragen Sie gezielt nach:
+\begin{itemize}
+    \item Gültigen Sicherheitszertifikaten und deren Erneuerungszyklen
+    \item IT-Risikomanagement- und Patchmanagement-Konzepten
+    \item Spezifischen Sicherheitsmaßnahmen für Ihre Verbindung (VPN-Verschlüsselung, SSH-Schlüssel-Management etc.)
+    \item NIS2-Betroffenheit des Dienstleisters selbst
+\end{itemize}
+\newpage
+\textbf{5. Dokumentation und Risikobewertung:} Alle Antworten sind zu dokumentieren. Antwortet ein Dienstleister nicht oder sind seine Maßnahmen unzureichend, bedeutet das nicht automatisch eine Vertragsbeendigung, ist aber in der Risikobewertung zu berücksichtigen:
+\begin{itemize}
+    \item Bei zu hohem Risiko: Dienstleister-Wechsel erwägen
+    \item Alternative: Dem Dienstleister eine Frist zur Nachbesserung setzen
+    \item Für künftige Verträge: Cybersicherheitsanforderungen vertraglich festhalten
+\end{itemize}
+
+Dokumentieren Sie Bewertungslogik, Prozesse und Entscheidungskriterien sorgfältig. Das hilft bei künftigen Audits und belegt die Nachvollziehbarkeit Ihres Vorgehens trotz der unklaren regulatorischen Anforderungen.

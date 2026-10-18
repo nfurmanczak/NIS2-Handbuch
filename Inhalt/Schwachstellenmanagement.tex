@@ -1,0 +1,155 @@
+\newpage
+\subsection{Schwachstellenmanagement}
+
+\textbf{Anforderung:} Das Schwachstellen- bzw. Patchmanagement ergibt sich aus der Anforderung der Cyberhygiene. Explizit genannt werden dort Patchmanagement, Regelungen für sichere Passwörter, die Einschränkung von Administratorkonten, Netzwerksegmentierung sowie Backup- und Sicherungskonzepte.
+
+Schwachstellenmanagement (Vulnerability Management) ist ein kontinuierlicher, systematischer Prozess zur Identifikation, Bewertung, Priorisierung und Behebung von Sicherheitslücken in IT-Systemen, Software und Infrastrukturen. Ziel ist, Angriffsflächen proaktiv zu minimieren, bevor Angreifer sie ausnutzen.
+
+Es ist mehr als das regelmäßige Einspielen von Updates: ein ganzheitlicher Ansatz aus technischen, organisatorischen und prozessualen Aspekten. Eine Schwachstelle kann eine ungepatchte Software ebenso sein wie eine Fehlkonfiguration oder eine unsichere Netzwerkarchitektur.
+
+Reaktive Ansätze werden erst nach einem Sicherheitsvorfall tätig; proaktives Schwachstellenmanagement erkennt und behebt Probleme, bevor sie zum Risiko werden. Das ist nicht nur für die NIS2-Compliance nötig, sondern auch wirtschaftlich sinnvoll, da die Kosten exponentiell steigen, je später eine Schwachstelle entdeckt wird.
+
+\subsubsection{Komponenten des Schwachstellenmanagements}
+
+\textbf{IT-Asset-Management}
+
+Grundlage ist, wie beim Risikomanagement, ein funktionierendes IT-Asset-Management mit allen genutzten IT-Assets. Man kann nicht schützen, was man nicht kennt; das gilt besonders im Zeitalter von Cloud Computing, Remote Work und Shadow IT. Für das Schwachstellenmanagement reicht die Inventarisierung von Seriennummer, Modell und Standort nicht: Es muss bekannt sein, welche Betriebssysteme, Software und Versionen eingesetzt werden. Schon bei kleinen Infrastrukturen ist das manuell nicht leistbar.
+
+Moderne IT-Landschaften sind oft hybrid und umfassen On-Premises-Server, Cloud-Ressourcen, mobile Endgeräte, IoT-Geräte und sogar OT-Systeme (Operational Technology). Jedes dieser Assets kann Schwachstellen aufweisen und muss erfasst und kontinuierlich überwacht werden.
+
+Nutzen Mitarbeitende private Geräte geschäftlich, entsteht schnell Schatten-IT, etwa wenn private Notebooks, Smartphones oder WLAN-Accesspoints installiert werden, weil das Büro-WLAN regelmäßig ausfällt. Selbst scheinbar harmlose Geräte wie schnurlose Tastaturen ohne Verschlüsselung können problematisch sein. Auch das sollten Sie berücksichtigen.
+
+Häufig übersehen werden Smartphones, die oft nicht im Asset-Management erfasst sind, zumal nicht jede Organisation ein Mobile Device Management (MDM) hat. Smartphones enthalten jedoch oft sensible Unternehmensinformationen, können mit Malware infiziert, verloren oder gestohlen werden und müssen daher erfasst und angemessen geschützt werden.
+
+\textbf{Vulnerability Assessment}
+
+Anschließend werden die Assets systematisch auf Schwachstellen bewertet. Das Vulnerability Assessment kombiniert mehrere Techniken und Analysemethoden, um ein vollständiges Bild des Sicherheitsstatus zu erhalten.
+
+Rückgrat sind automatisierte Vulnerability Scanner, die Software-Versionen und Konfigurationen mit Datenbanken bekannter Schwachstellen abgleichen. Authentifizierte Scans nutzen Anmeldedaten für tiefere Einblicke und finden auch lokale, von außen unsichtbare Schwachstellen. Nicht-authentifizierte Scans betrachten Systeme aus der Perspektive eines externen Angreifers und nutzen meist nur öffentlich einsehbare Informationen.
+
+Die Qualität hängt stark von Aktualität und Vollständigkeit der Schwachstellen-Datenbanken ab. Gute Scanner nutzen mehrere Quellen: die National Vulnerability Database (NVD), Security Advisories der Hersteller und kommerzielle Threat-Intelligence-Dienste. Entscheidend ist, wie schnell neue Schwachstellen integriert werden. Bei Zero-Day-Exploits können Stunden zählen.
+
+Neben der Infrastruktur sind auch Anwendungen zu analysieren. Besonders gefährdete Web-Anwendungen erfordern spezialisierte Scanner für die OWASP Top 10 und weitere anwendungsspezifische Schwachstellen. Für selbst entwickelte Software decken Static und Dynamic Application Security Testing (SAST/DAST) Sicherheitsprobleme bereits während der Entwicklung auf.
+\newpage
+Bekannte Open-Source-Scanner sind:
+
+\textbf{Für Infrastructure/Network Scanning:}
+\begin{itemize}
+    \item \textbf{OpenVAS}: umfassender Scanner mit über 50.000 Vulnerability Tests
+    \item \textbf{Nuclei}: template-basiert, schnell, über 4.000 Community-Templates
+    \item \textbf{Nmap mit NSE Scripts}: erweitert Port-Scanning um Vulnerability Detection
+\end{itemize}
+
+\textbf{Für Web Application Security:}
+\begin{itemize}
+    \item \textbf{OWASP ZAP}: Standard für Web App Testing, OWASP Top 10 Abdeckung
+    \item \textbf{Wapiti}: Black Box Scanner für SQL-Injection, XSS und Command Injection
+\end{itemize}
+
+\textbf{Für Static Code Analysis (SAST):}
+\begin{itemize}
+    \item \textbf{SonarQube Community}: über 25 Sprachen, CWE/SANS Top 25 Detection
+    \item \textbf{Semgrep}: pattern-basierte Regeln, moderne Static Analysis
+\end{itemize}
+
+\textbf{Für Container und Cloud:}
+\begin{itemize}
+    \item \textbf{Trivy}: Container-Images, Kubernetes-Konfigurationen, Git-Repos
+    \item \textbf{Clair}: layer-für-layer Container-Image Analyse
+    \item \textbf{Prowler}: AWS/Azure/GCP Konfigurationsprüfung, Compliance-Checks
+\end{itemize}
+
+Ein minimaler, aber NIS2-konformer Ansatz: OpenVAS für monatliche Infrastruktur-Scans, OWASP ZAP für quartalsweise Web-Application-Tests und Nuclei oder Nmap für schnelle, wöchentliche Checks auf neu bekannte Schwachstellen. Dokumentieren Sie die Ergebnisse und legen Sie klare Behebungsfristen fest: kritische Schwachstellen binnen einer Woche, mittlere binnen eines Monats. Ergänzend können Sie über eine eigene E-Mail-Adresse Security-Meldungen Ihrer Hersteller, von Behörden wie dem BSI oder anderen Security-Portalen abonnieren, um schnell über sicherheitsrelevante Updates informiert zu sein.
+
+Praxistipp: Leiten Sie solche Herstellermeldungen direkt in ein Ticketsystem weiter. Ein Ticket erhält meist mehr Aufmerksamkeit als eine E-Mail im Ordner, ermöglicht die Prüfung, ob das eigene Setup betroffen ist oder bereits Updates eingespielt wurden, und schafft eine lückenlose Nachverfolgung.
+
+Das Vulnerability Assessment muss zum Schutzbedarf passen. Direkt mit dem Internet verbundene Systeme wie Webserver, Webanwendungen oder E-Mail-Server benötigen ggf. mehr Aufmerksamkeit als Backend-Systeme und sind häufiger und intensiver zu scannen.
+
+Die Aufsichtsbehörden bewerten nicht die Perfektion Ihres Systems, sondern ob Sie einen angemessenen, dokumentierten Prozess etabliert haben und konsequent befolgen. Ein einfacher, gut dokumentierter Prozess ist besser als ein komplexes, nur sporadisch genutztes System.
+
+\textbf{Risikobewertung und Priorisierung}
+
+Nicht alle Schwachstellen sind gleich kritisch, und ihre Anzahl sagt wenig über das tatsächliche Risiko aus. Eine effektive Bewertung berücksichtigt die technische Schwere, die Kritikalität des betroffenen Systems, die Wahrscheinlichkeit einer Ausnutzung und den potenziellen Geschäftsschaden.
+
+Das mit Abstand verbreitetste Bewertungssystem ist das Common Vulnerability Scoring System (CVSS). Sein Base Score berücksichtigt technische Faktoren wie Angriffskomplexität, erforderliche Privilegien und Auswirkungen auf Vertraulichkeit, Integrität und Verfügbarkeit. Für eine praxisgerechte Priorisierung reicht CVSS allein oft nicht aus.
+
+Moderne Systeme ergänzen CVSS um Kontext: Ist das System aus dem Internet erreichbar? Existiert ein Exploit? Wird die Schwachstelle aktiv ausgenutzt? Wie kritisch ist das System für die Geschäftsprozesse? Daraus ergibt sich eine ganzheitliche Risikobewertung.
+
+Wichtig ist auch Threat Intelligence: Informationen über aktuelle Angriffskampagnen, in-the-wild Exploits und Angreifer-TTPs (Tactics, Techniques, and Procedures) helfen, Schwachstellen zu identifizieren und ihre Kritikalität für den Geschäftsbetrieb besser zu bewerten.
+
+\textbf{Patch Management}
+
+Die Behebung ist oft der aufwendigste Teil: Es gibt feste Wartungsfenster, Change-Management-Prozesse und Abhängigkeiten zwischen Systemen, und der Geschäftsbetrieb soll möglichst wenig beeinträchtigt werden.
+
+Patch Management bildet den Kern der meisten Konzepte und beginnt mit der Bewertung verfügbarer Patches. Nicht jeder Patch ist sofort anwendbar, manche verursachen Inkompatibilitäten oder beeinträchtigen Geschäftsprozesse. Neue Patches oder Workarounds sollten daher zuerst in Testumgebungen geprüft werden. Für die kritischsten Systeme sollten vorab Testcases definiert, nach dem Update in der Testumgebung geprüft und dokumentiert werden. Ein kritisches Update hilft nicht, wenn danach die Datenbank nicht mehr lesbar ist.
+
+Die Klassifizierung nach Schweregrad hilft bei der Priorisierung. Kritische Patches gegen aktiv ausgenutzte Schwachstellen erfordern oft ein beschleunigtes Notfall-Patch-Verfahren, das normale Change-Management-Prozesse umgeht oder verkürzt. Dabei muss eine mögliche Beeinträchtigung der Verfügbarkeit akzeptiert werden. Mit Team und Geschäftsleitung sollte festgelegt werden, unter welchen Voraussetzungen Wartungsfenster auch während des Geschäftsbetriebs zulässig sind. Nicht immer gibt es Cluster oder High-Availability-Setups, die schrittweise aktualisiert werden können.
+
+Nicht alle Schwachstellen lassen sich patchen: Hersteller liefern Patches teils verzögert, für Legacy-Systeme gibt es keine Updates mehr, oder kritische Systeme können aus operativen Gründen nicht zeitnah gepatcht werden. Dann sind kompensatorische Maßnahmen nötig: Netzwerksegmentierung reduziert die Angriffsfläche, zusätzliches Monitoring erkennt verdächtige Aktivitäten frühzeitig, und Firewalls blockieren bekannte Angriffsmuster.
+
+Der Patch-Management-Prozess gilt nicht nur für Sicherheitsupdates. Es muss festgelegt sein, in welchen Abständen auf verfügbare Updates geprüft und wie diese eingespielt werden, denn Updates beheben auch Softwarefehler, die Verfügbarkeit oder Funktion beeinträchtigen können.
+
+\textbf{Messung und kontinuierliche Verbesserung}
+
+Schwachstellenmanagement erfordert kontinuierliche Überwachung: Täglich werden neue Schwachstellen entdeckt, Software wird aktualisiert, die IT-Umgebung verändert sich. Das Monitoring muss sowohl neue Schwachstellen als auch die erfolgreiche Behebung bestehender verfolgen.
+
+Die Wirksamkeit muss messbar sein. Key Performance Indicators (KPIs) und Metriken helfen, den Erfolg zu bewerten und Verbesserungspotenziale zu erkennen.
+
+Operative Metriken messen die Prozesseffizienz: Mean Time to Detect (MTTD) misst, wie schnell neue Schwachstellen erkannt werden, Mean Time to Remediate (MTTR) die Geschwindigkeit der Behebung, die SLA Compliance Rate die Einhaltung definierter Fristen.
+
+Strategische Metriken betrachten die längerfristige Entwicklung: Die Vulnerability Density (Schwachstellen pro Asset) im Zeitverlauf zeigt, ob sich die Sicherheitslage verbessert. Risk Reduction Metrics versuchen, den Beitrag zur Gesamtrisikoreduktion zu quantifizieren.
+
+Business-Impact-Metriken verbinden Technik und Geschäftsergebnis: Reduced Downtime durch proaktive Behebung, Cost Avoidance durch verhinderte Vorfälle und Compliance Score Improvements zeigen den Wert des Schwachstellenmanagements.
+
+Regelmäßige Prozess-Reviews nutzen diese Metriken, um Schwächen in den Abläufen zu erkennen; Lessons Learned aus Sicherheitsvorfällen fließen in die Weiterentwicklung ein. Wichtig ist eine Kultur der kontinuierlichen Verbesserung, die Fehler als Lernchance statt als Anlass für Schuldzuweisungen sieht.
+
+\subsubsection{Praktische Umsetzung in der Organisation}
+
+Ein effektiver Prozess beginnt mit klaren Definitionen: Welche Assets werden in welcher Frequenz gescannt? Welche Schwellenwerte gelten für welche Risikokategorien? Wie lange dürfen kritische Schwachstellen unbehoben bleiben? Welche Strukturen und Verantwortlichkeiten sind nötig? Schwachstellenmanagement ist dabei ein bereichsübergreifender Prozess, der verschiedene Teams einbezieht.
+
+Zuerst ist zu prüfen, ob das IT-Asset-Management als Grundlage für Vulnerability Assessment und Patch Management ausreicht; falls nicht, muss nachgebessert werden. Manche Organisationen erfassen jede installierte Software (auch Bibliotheken) und gleichen sie automatisch mit bekannten Schwachstellen ab. Das ist unter Umständen sinnvoll, aber sehr aufwendig und nicht für jede Organisation leistbar. Alternativ kann auf Basis des IT-Risikomanagements auf die verbreitetste Software und die wichtigsten Systeme fokussiert werden, z.\,B. Betriebssysteme, Basisinfrastruktur wie Switches oder Router und geschäftskritische Anwendungen wie Datenbanken oder Webserver. Zusätzlich sollten, sofern verfügbar, Security-Newsletter dieser Hersteller oder Community-Projekte abonniert werden. Nützlich sind auch allgemeine Newsletter und Lageberichte (BSI-Newsletter, BSI-Lagebericht, CERT-Bund-Warnungen etc.), um aktuelle Angriffe und Bedrohungen zu kennen. Dieser Ansatz ist minimalistisch, zeigt aber, dass systematisch ein Schutzkonzept für die wichtigsten Systeme entwickelt wurde. Und das zählt letztlich.
+\newpage
+Wie erwähnt, können private Geräte im Unternehmen problematisch werden (BYOD, Schatten-IT). Dem lässt sich auf mehreren Wegen begegnen.
+
+Organisatorisch sollten Richtlinien die geschäftliche Nutzung privater oder nicht genehmigter Geräte untersagen. Schulen Sie Ihre Mitarbeitenden zu den Risiken und lassen Sie die Richtlinien als verbindliche Grundlage unterschreiben.
+
+Technisch bieten sich Netzwerk-Controls an: Sperren Sie ungenutzte Netzwerkports per Switch-Konfiguration und implementieren Sie Port Security mit MAC-Address-Limiting. Trennen Sie das WLAN in Netze für Firmen- und Gastgeräte. Network-Access-Control-Systeme (NAC) wie Cisco ISE oder PacketFence leiten unbekannte Geräte automatisch in Quarantäne-VLANs.
+Am Endpoint lassen sich USB-Speichergeräte per Group Policy (Windows) oder Endpoint-Security-Software sperren, auf Read-Only beschränken oder per Whitelist auf genehmigte Geräte begrenzen. Regelmäßige Netzwerk-Scans, etwa mit Nmap, decken zusätzlich unbekannte Geräte auf.
+
+Für Smartphones empfiehlt sich ein MDM wie Microsoft Intune oder VMware Workspace ONE. Damit lassen sich Updates erzwingen, Anwendungen sperren und Geräte bei Verlust orten, sperren oder löschen. Moderne MDM-Systeme unterstützen auch Container, die Geschäfts- und Privatbereich sauber trennen.
+
+Werden Smartphones auch privat genutzt, sollten solche Eingriffe vorab mit dem Betriebsrat abgestimmt werden, da sie als tiefgreifender Eingriff in die Privatsphäre gelten können. Container-Lösungen sind hier eine datenschutzfreundliche Alternative.
+
+Darauf aufbauend sollte aktiv nach Schwachstellen und Fehlkonfigurationen gesucht werden, am besten mit Scannern wie Tenable, Qualys oder OpenVAS, die die Netzwerke regelmäßig prüfen. Für die Analyse der Berichte und die Behandlung der Schwachstellen ist ein Prozess zu definieren. Reports sind nutzlos, wenn sich niemand um die Befunde kümmert. Bedenken Sie: Ein Scanner-System hat Netzwerkzugriff auf alle Hosts und ist daher ein lohnendes Angriffsziel. Es muss entsprechend gehärtet und die Maßnahmen müssen dokumentiert werden.
+
+Zuletzt ist das Patch Management festzulegen. Eine gute Grundlage sind regelmäßige, ggf. automatische Updates, sofern fehlerhafte Updates früh erkannt und der Rollout gestoppt werden kann. Prüfen Sie, welche kritischen Systeme häufiger aktualisiert werden müssen. Definieren Sie Testcases: Was ist bei welchem System zu testen, bevor ein Update in die Produktivumgebung geht? Daraus ergibt sich ein Change-Management-Prozess, der ebenfalls dokumentiert werden sollte.
+
+Für kritische oder bereits aktiv ausgenutzte Zero-Day-Lücken ist ein Notfallprozess für den zügigen Rollout zu definieren. Legen Sie zunächst fest, wann er greift. Typischerweise ist das der Fall, wenn Lücken aktiv ausgenutzt werden und Vertraulichkeit oder Verfügbarkeit gefährden. Eine Sicherheitslücke ist aber nicht automatisch eine Schwachstelle: Andere Schutzmechanismen können ihre Ausnutzung verhindern oder praktisch unmöglich machen. Der Notfallprozess erfordert ggf. die Freigabe eines Vorgesetzten, da beschleunigte Updates, etwa durch nötige Neustarts, wichtige Infrastruktur zeitweise unerreichbar machen können. Abzuwägen sind das Ausnutzungsrisiko, die eingeschränkte Verfügbarkeit beim Einspielen, mögliche negative Folgen des Updates und die Machbarkeit eines Rollbacks. Updates haben also nicht nur positive Effekte; diese Risiken sind im Notfallplan zu berücksichtigen und, wo möglich, durch Tests oder Rollback-Pläne zu minimieren.
+\newpage
+\subsubsection{Checkliste Schwachstellenmanagement}
+
+
+\begin{checklist}
+\item IT-Asset-Management für Schwachstellenmanagement prüfen
+\item Identifizieren von kritischen Assets mit hohem Schutzbedarf
+\item Management für mobile Endgeräte (Smartphones, Notebooks, etc.)
+\item Richtlinien/Schulungen für BYOD
+\item Risikobewertungs-Kriterien festgelegt (CVSS + Kontext)
+\item Vulnerability Scanner ausgewählt und implementieren (OpenVAS, Nuclei, OWASP ZAP)
+\item Netzwerkscanner auswählen und implementieren
+\item Scanner-System gehärtet und dokumentiert
+\item Scan-Frequenzen definiert (monatlich/quartalsweise/wöchentlich je nach Kritikalität)
+\item Patch Management Prozess definiert und dokumentiert
+\item Change-Management-Prozess definieren und dokumentieren
+\item Testumgebungen für Patch-Validierung eingerichtet
+\item Testcases für kritische Systeme definiert
+\item Notfall-Patch-Verfahren definieren und dokumentieren
+\item SLAs für Schwachstellenbehebung definiert (z.B. kritisch: 7 Tage)
+\item Security Newsletter von Herstellern abonniert
+\item E-Mail-zu-Ticket Integration für Security-Meldungen eingerichtet
+\item Metriken und KPIs definiert (MTTD, MTTR, SLA Compliance)
+\item Verantwortlichkeiten und Rollen zugewiesen
+\item Kompensatorische Maßnahmen für unpatchbare Systeme definiert
+\item Regelmäßige Prozess-Reviews terminiert
+\item Schulung der Mitarbeiter
+\end{checklist}

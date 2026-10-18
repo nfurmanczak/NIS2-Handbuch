@@ -1,0 +1,117 @@
+\newpage
+\subsection{Bewältigung von Sicherheitsvorfällen}
+
+\textbf{Anforderung:} NIS2 fordert Verfahren zur Erkennung, Analyse, Eindämmung und Behebung von Sicherheitsvorfällen. Erhebliche Sicherheitsvorfälle müssen fristgerecht an das BSI gemeldet werden. Die Organisation muss strukturiert auf Vorfälle reagieren und daraus lernen können.
+
+Sicherheitsvorfälle passieren. Unabhängig von der Qualität der Prävention ist die Frage nicht ob, sondern wann. Entscheidend ist dann eine schnelle, geordnete Reaktion. Hektisches, unstrukturiertes Handeln vernichtet Beweise, verschafft dem Angreifer Zeit und vergrößert den Schaden. Ein gut vorbereitetes Vorgehen begrenzt den Schaden, erfüllt die gesetzlichen Pflichten und ermöglicht es, aus dem Vorfall zu lernen.
+
+Die Vorfallsbewältigung ist eng mit Notfallplan und Krisenmanagement verwandt (siehe gleichnamiges Kapitel). Das Krisenmanagement regelt Koordination und Kommunikation bei schwerwiegenden Ereignissen, der Notfallplan die Wiederherstellung des Betriebs. Hier geht es um den vorgelagerten Prozess: Was wird erkannt, wie wird bewertet, und was geschieht in den ersten entscheidenden Minuten und Stunden?
+
+\textbf{Was ist ein Sicherheitsvorfall?}
+
+Nicht jede Auffälligkeit ist ein Sicherheitsvorfall, und nicht jeder Vorfall ist erheblich im Sinne von NIS2. Definieren Sie diese Begriffe vorab, damit im Ernstfall keine Zeit mit Diskussionen verloren geht.
+
+\begin{itemize}
+    \item \textbf{Ereignis (Event):} Jede beobachtbare Aktivität in einem System, zum Beispiel ein fehlgeschlagener Login-Versuch oder eine ungewöhnlich hohe Netzwerklast
+    \item \textbf{Sicherheitsvorfall (Incident):} Ein Ereignis oder eine Reihe von Ereignissen, die tatsächlich oder potenziell die Verfügbarkeit, Vertraulichkeit oder Integrität von Systemen oder Daten beeinträchtigen
+    \item \textbf{Erheblicher Sicherheitsvorfall:} Ein Vorfall, der zu schwerwiegenden Betriebsstörungen oder finanziellen Verlusten führt oder führen kann, oder der andere natürliche oder juristische Personen erheblich beeinträchtigt hat
+\end{itemize}
+
+Typische Beispiele: Ransomware-Angriff, unbefugter Zugriff auf Systeme oder Daten, Phishing mit Kontoübernahme, DDoS-Angriff auf kritische Dienste, Datenleck oder unbeabsichtigte Datenveröffentlichung, kompromittierter Dienstleister mit Zugang zur eigenen Infrastruktur.
+\newpage
+\textbf{Der Incident-Response-Prozess}
+
+Ein strukturierter Incident-Response-Prozess durchläuft typischerweise folgende Phasen:
+
+\textbf{1. Vorbereitung}
+
+Die effektivste Maßnahme ist die Vorbereitung vor einem Vorfall:
+\begin{itemize}
+    \item Definition eines Incident-Response-Teams mit klaren Rollen und Zuständigkeiten
+    \item Vorab definierte Kontaktlisten (intern, extern, Behörden)
+    \item Playbooks oder Checklisten für häufige Vorfallstypen (Ransomware, Phishing, Datenleck)
+    \item Sicherstellung, dass die notwendigen Werkzeuge für Analyse und Forensik verfügbar sind
+    \item Regelmäßige Übungen, damit das Team den Prozess kennt
+\end{itemize}
+
+\textbf{2. Erkennung und Analyse}
+
+Vorfälle werden auf unterschiedlichen Wegen entdeckt: durch Monitoring-Systeme, durch Meldungen von Mitarbeitenden, durch externe Hinweise (Behörde, Dienstleister, Sicherheitsforscher) oder weil sich der Angreifer selbst zu erkennen gibt.
+
+Die Analyse soll den Vorfall verständlich machen: Welche Systeme sind betroffen? Seit wann läuft der Angriff? Welche Daten könnten kompromittiert sein? Wie gelangte der Angreifer ins System? Diese Fragen sind zügig, aber sorgfältig zu beantworten. Systeme sollten nicht vorschnell neu aufgesetzt werden, da sonst forensisch relevante Spuren verloren gehen.
+
+\textbf{3. Klassifizierung und Eskalation}
+
+Anhand der Analyse wird der Vorfall klassifiziert. Eine einfache Skala (z.\,B. niedrig, mittel, hoch, kritisch) hilft, schnell über Ressourcen und Beteiligte zu entscheiden. Kritische Vorfälle aktivieren das Krisenmanagement, andere bewältigt das IT-Team allein.
+
+\textbf{4. Eindämmung}
+
+Ziel ist, den Schaden zu begrenzen und die Ausbreitung zu stoppen. Je nach Vorfall kann das bedeuten:
+\begin{itemize}
+    \item Betroffene Systeme vom Netzwerk trennen
+    \item Kompromittierte Benutzerkonten sperren
+    \item Schädliche Prozesse beenden
+    \item Externe Verbindungen blockieren
+\end{itemize}
+
+Dabei ist zwischen schneller Wirkung und dem Erhalt forensischer Beweise abzuwägen. Wo möglich, sollten Systemzustände vorher gesichert werden (Speicherabbilder, Logs, Netzwerkmitschnitte).
+
+\textbf{5. Beseitigung und Wiederherstellung}
+
+Anschließend wird die Ursache beseitigt: Schadsoftware entfernen, kompromittierte Zugangsdaten zurücksetzen, Schwachstellen schließen. Danach werden die Systeme aus sauberen Backups wiederhergestellt und schrittweise in Betrieb genommen, wie im Notfallplan beschrieben.
+
+\textbf{6. Nachbereitung}
+
+Die oft vernachlässigte Nachbereitung ist einer der wertvollsten Teile des Prozesses. Eine strukturierte Analyse klärt: Was ist genau passiert? Wie konnte es passieren? Was lief gut, was hätte besser laufen können? Was ändert sich jetzt? Die Erkenntnisse fließen in Richtlinien, Schutzmaßnahmen und Prozesse ein.
+\newpage
+\textbf{Meldepflichten gegenüber dem BSI}
+
+Einer der wichtigsten und am häufigsten unterschätzten Aspekte ist die Meldepflicht: Erhebliche Sicherheitsvorfälle müssen fristgerecht an das BSI gemeldet werden. Die kurzen Fristen beginnen, sobald die Organisation Kenntnis vom Vorfall erlangt:
+
+\begin{itemize}
+    \item \textbf{Frühwarnung innerhalb von 24 Stunden:} Eine erste Meldung, die angibt, ob der Vorfall vermutlich auf rechtswidrige oder böswillige Handlungen zurückzuführen ist und ob er grenzüberschreitende Auswirkungen hat. Diese Meldung muss noch keine vollständige Analyse enthalten.
+    \item \textbf{Erstmeldung innerhalb von 72 Stunden:} Eine ausführlichere Meldung mit erster Bewertung des Vorfalls, seiner Schwere und seiner Auswirkungen sowie, soweit bekannt, Angaben zu den Indikatoren für die Kompromittierung.
+    \item \textbf{Zwischenbericht auf Anfrage:} Das BSI kann jederzeit einen aktuellen Statusbericht anfordern.
+    \item \textbf{Abschlussbericht innerhalb eines Monats:} Eine vollständige Beschreibung des Vorfalls, der Ursachen, der ergriffenen Maßnahmen und der Auswirkungen.
+\end{itemize}
+
+Einrichtungen bestimmter Sektoren wie Finanzen, IT, Telekommunikation und digitale Dienste müssen zusätzlich betroffene Kunden unverzüglich über erhebliche Cyberbedrohungen informieren, die deren Interessen beeinträchtigen können. Diese Pflicht gilt unabhängig von der BSI-Meldung und sollte frühzeitig geprüft werden.
+
+Gemeldet wird über das BSI-Portal. Registrieren Sie Ihre Organisation dort, bevor ein Vorfall eintritt, und stellen Sie sicher, dass die verantwortliche Person die nötigen Informationen zusammenstellen kann und die Zugangsdaten kennt. Unter Zeitdruck fällt die Meldung deutlich leichter, wenn der Prozess vorher einmal durchgespielt wurde.
+
+Die Meldepflicht greift nicht erst nach vollständiger Aufklärung: Die 24-Stunden-Meldung darf unvollständig sein. Wer wartet, bis alle Details bekannt sind, riskiert, die Frist zu versäumen und eine Ordnungswidrigkeit zu begehen.
+
+Sind personenbezogene Daten betroffen, kann zudem eine Meldung an die Datenschutzaufsichtsbehörde erforderlich sein. Diese Pflicht ergibt sich aus der DSGVO und gilt unabhängig von NIS2.
+\newpage
+\textbf{Playbooks für häufige Vorfallstypen}
+
+Man kann sich nicht auf jeden denkbaren Angriff vorbereiten. Für die häufigsten und folgenreichsten Vorfallstypen lohnen sich aber Playbooks: Handlungsanweisungen, die Schritt für Schritt beschreiben, was zu tun ist.
+
+Empfehlenswerte Playbooks für die meisten Organisationen:
+
+\begin{itemize}
+    \item \textbf{Ransomware:} Isolierung betroffener Systeme, Prüfung der Backup-Integrität, Entscheidung über Lösegeldzahlung (grundsätzlich nicht empfohlen), BSI-Meldung, Wiederherstellung
+    \item \textbf{Phishing mit Kontoübernahme:} Sofortige Kontosperrung, Prüfung aller Aktivitäten des kompromittierten Kontos, Passwort-Reset aller potenziell betroffenen Konten, Analyse der Phishing-Mail
+    \item \textbf{Datenleck:} Umfang der betroffenen Daten ermitteln, Zugang sperren, Benachrichtigungspflichten prüfen (DSGVO, BSI), Kommunikation an Betroffene vorbereiten
+    \item \textbf{DDoS-Angriff:} Traffic-Analyse, Einbindung des Internetproviders, Aktivierung von Schutzmaßnahmen (CDN, Scrubbing), Kommunikation an Kunden bei längeren Ausfällen
+\end{itemize}
+
+Playbooks müssen nicht perfekt oder erschöpfend sein. Schon eine einseitige Checkliste mit den wichtigsten ersten Schritten ist deutlich besser als keine Vorbereitung.
+\newpage
+\textbf{Checkliste}
+\begin{checklist}
+\item Incident-Response-Team benennen mit klaren Rollen und Vertretungsregelungen
+\item Definition von Sicherheitsvorfällen und Schweregrade dokumentieren
+\item Kontaktlisten für interne und externe Ansprechpartner (BSI, Forensik-Dienstleister, Rechtsanwalt, Versicherung) anlegen
+\item Organisation beim BSI registrieren und Zugang zum Meldeportal einrichten
+\item Meldeprozess für erhebliche Vorfälle definieren: 24h Frühwarnung, 72h Erstmeldung, 1 Monat Abschlussbericht
+\item Verantwortlichkeit für BSI-Meldungen klar benennen
+\item Playbooks für häufige Vorfallstypen erstellen (Ransomware, Phishing, Datenleck)
+\item Logging und Monitoring so konfigurieren, dass Vorfälle erkannt werden können
+\item Forensische Grundregeln dokumentieren (was darf wann verändert oder gelöscht werden)
+\item Eskalationsprozess definieren: Wann wird die Geschäftsleitung informiert, wann das Krisenmanagement aktiviert?
+\item Schnittstelle zum Notfallplan und Krisenmanagement klären
+\item Mitarbeitende über Meldewege für verdächtige Ereignisse schulen
+\item Incident-Response-Prozess mindestens jährlich in einer Übung testen
+\item Nachbereitung nach jedem Vorfall durchführen und Erkenntnisse dokumentieren
+\end{checklist}

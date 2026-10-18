@@ -1,0 +1,107 @@
+\newpage
+\subsection{Cyberhygiene und Cybersicherheitsschulungen}
+
+\textbf{Anforderung:} NIS2 fordert grundlegende Verfahren der Cyberhygiene sowie Schulungen zur Cybersicherheit. Ziel ist es, das Sicherheitsniveau durch einfache, konsequent angewandte Maßnahmen im Alltag dauerhaft zu stärken.
+
+Cyberhygiene umfasst die grundlegenden Sicherheitspraktiken im täglichen Umgang mit IT-Systemen. Der Begriff lehnt sich an die medizinische Hygiene an: So wie Händewaschen Krankheiten verhindert, verhindert konsequente Cyberhygiene viele der häufigsten Angriffe. Die meisten erfolgreichen Angriffe nutzen keine hochkomplexen Schwachstellen, sondern menschliche Fehler, schwache Passwörter oder veraltete Software.
+
+Cyberhygiene ist ein fortlaufender Prozess: Angriffstechniken entwickeln sich weiter, neue Bedrohungen entstehen, Mitarbeitende kommen und gehen. Es braucht daher klare Richtlinien und regelmäßige Schulungen, damit alle dieselben Grundregeln kennen.
+
+Der Schulungsaspekt wird in den Kapiteln zu Schulungen und Geschäftsleitungsschulung behandelt. Dieses Kapitel konzentriert sich auf die Verfahren und Richtlinien, die in der Organisation etabliert und gelebt werden müssen.
+
+\textbf{Passwortrichtlinien}
+
+Schwache oder mehrfach verwendete Passwörter zählen zu den häufigsten Angriffsursachen. Eine Passwortrichtlinie legt verbindlich fest, wie Passwörter aussehen müssen und wie mit ihnen umzugehen ist.
+
+Empfehlungen für eine praxistaugliche Passwortrichtlinie:
+
+\begin{itemize}
+    \item \textbf{Länge vor Komplexität:} Ein langes Passwort aus mehreren zufälligen Wörtern ist meist sicherer und leichter zu merken als ein kurzes mit Sonderzeichen. Das BSI empfiehlt mindestens 8 Zeichen mit und mindestens 12 Zeichen ohne Mehrfaktorauthentifizierung
+    \item \textbf{Einzigartigkeit:} Für jeden Dienst ein eigenes Passwort, damit eine Kompromittierung nicht andere Dienste gefährdet
+    \item \textbf{Passwortmanager:} Empfehlen Sie einen Passwortmanager. Für die meisten Mitarbeitenden ist das der realistischste Weg zu einzigartigen, starken Passwörtern
+    \item \textbf{Kein regelmäßiger Zwangswechsel:} Passwörter nur bei konkretem Anlass wechseln, etwa bei einem vermuteten Sicherheitsvorfall oder nach dem Austritt einer Person mit Zugangsdaten
+\end{itemize}
+
+Wirksam sind Passwortrichtlinien nur, wenn sie technisch durchgesetzt werden. Definieren Sie Mindestlängen in Ihren Systemen und prüfen Sie, ob bekannte kompromittierte Passwörter blockiert werden können.
+
+\textbf{Mehrfaktorauthentifizierung}
+
+Die Mehrfaktorauthentifizierung ergänzt das Passwort um einen zweiten Faktor und ist eine der wirksamsten Schutzmaßnahmen überhaupt (ausführlich im Kapitel zur Zugriffskontrolle). Für die Cyberhygiene ist entscheidend, dass sie verständlich ist und konsequent angewendet wird. Dazu braucht es eine klare Regelung, für welche Systeme und Zugänge sie verpflichtend ist, sowie eine Schulung, damit Mitarbeitende den Sinn verstehen und sie nicht zu umgehen versuchen.
+\newpage
+\textbf{Sicherer Umgang mit E-Mails}
+
+E-Mail ist nach wie vor der häufigste Angriffsweg. Phishing-Mails, manipulierte Anhänge und gefälschte Absender sind allgegenwärtig und immer schwerer zu erkennen. Neben Schulungen braucht es technische und organisatorische Maßnahmen:
+
+\begin{itemize}
+    \item \textbf{Technische Schutzmaßnahmen:} Spam- und Phishing-Filter, SPF-, DKIM- und DMARC-Konfiguration für ausgehende E-Mails sowie automatische Prüfung von Anhängen auf Schadsoftware reduzieren das Risiko erheblich
+    \item \textbf{Klare Meldewege:} Mitarbeitende müssen wissen, wem und wie sie verdächtige E-Mails melden. Dieser Weg sollte einfach und bekannt sein
+    \item \textbf{Sensibilisierung für CEO-Fraud und Social Engineering:} Besonders Buchhaltung und Geschäftsführung sollten regelmäßig auf gefälschte Zahlungsaufforderungen und Identitätsbetrug hingewiesen werden
+\end{itemize}
+
+\textbf{Sauberer Arbeitsplatz und gesperrte Bildschirme}
+
+Der Clean-Desk-Ansatz bedeutet, sensible Informationen am Arbeitsplatz nicht offen zugänglich zu lassen, ob auf Papier, ungesperrtem Bildschirm oder USB-Stick. Das klingt trivial, hat aber erheblichen Einfluss auf die Sicherheit, besonders bei Besucherverkehr oder geteilten Arbeitsbereichen.
+
+Definieren Sie eine entsprechende Richtlinie und verankern Sie sie in der Einführungsschulung:
+
+\begin{itemize}
+    \item Bildschirme werden gesperrt, wenn der Arbeitsplatz verlassen wird (technisch erzwingen, zum Beispiel durch automatische Sperrung nach kurzer Inaktivität)
+    \item Sensible Dokumente werden nicht offen auf dem Schreibtisch liegen gelassen
+    \item Ausdrucke mit sensiblen Inhalten werden nicht im Drucker vergessen
+    \item Unterlagen, die nicht mehr gebraucht werden, werden sicher entsorgt (Schredder, nicht Papiermüll)
+\end{itemize}
+\newpage
+\textbf{Wechselmedien und Datentransfer}
+
+USB-Sticks und andere Wechselmedien sind ein unterschätztes Risiko: Aus Neugier eingesteckte, gefundene USB-Sticks haben schon ganze Netzwerke kompromittiert. Legen Sie fest, wie mit Wechselmedien umzugehen ist:
+
+\begin{itemize}
+    \item Nur genehmigte, bekannte Wechselmedien dürfen an dienstliche Geräte angeschlossen werden
+    \item Unbekannte oder gefundene Datenträger werden nicht eingesteckt, sondern der IT gemeldet
+    \item Für den sicheren Datentransfer werden freigegebene interne Lösungen genutzt (kein privater Cloud-Speicher für Unternehmensdaten)
+\end{itemize}
+
+Technisch lässt sich die USB-Nutzung über Endpoint-Security-Lösungen oder Gruppenrichtlinien einschränken oder protokollieren.
+
+\textbf{Mobiles Arbeiten und öffentliche Netzwerke}
+
+Mobiles Arbeiten ist heute Standard und bringt eigene Risiken mit sich: unsichere Netzwerke, unbeobachtete Arbeitssituationen und private Geräte. Definieren Sie klare Regeln für das Arbeiten außerhalb des Büros:
+
+\begin{itemize}
+    \item Dienstliche Tätigkeiten erfolgen ausschließlich über gesicherte Verbindungen, in der Regel über ein VPN
+    \item In öffentlichen WLANs (Café, Hotel, Bahnhof) werden keine sensiblen Daten übertragen, sofern kein VPN aktiv ist
+    \item Bildschirme werden in der Öffentlichkeit so positioniert, dass keine unbefugten Personen mitlesen können (Sichtschutzfolie empfohlen)
+    \item Für das Homeoffice gelten dieselben Regeln wie im Büro, insbesondere in Bezug auf den Umgang mit Dokumenten und die Sicherheit des verwendeten Netzwerks
+\end{itemize}
+\newpage
+\textbf{Software und Updates}
+
+Veraltete Software ist eine der häufigsten Angriffsursachen. Die technischen Aspekte des Patch-Managements behandelt das Kapitel zum Schwachstellenmanagement. Bei der Cyberhygiene geht es vor allem darum, dass Mitarbeitende Updates nicht dauerhaft ignorieren oder verschieben. Legen Sie den Umgang mit Updates auf Endgeräten fest und kommunizieren Sie ihn klar. Automatische Updates für Betriebssysteme und gängige Software sollten aktiviert sein, sofern der zentrale IT-Betrieb sie nicht steuert.
+
+\textbf{Meldewege für Sicherheitsvorfälle}
+
+Grundlegend ist, dass alle Mitarbeitenden wissen, was bei Verdacht zu tun ist: Auf eine Phishing-Mail geklickt? Das Gerät verhält sich merkwürdig? Ein Unbekannter hat sich Zutritt verschafft? Ohne klare Meldewege wird vieles aus Scham oder Unsicherheit verschwiegen, und ein Vorfall eskaliert, weil zu spät reagiert wird.
+
+Definieren Sie einen einfachen, bekannten Meldeweg ohne bürokratische Hürden, erklären Sie ihn in Schulungen und machen Sie ihn in der internen Kommunikation sichtbar. Mitarbeitende sollen lieber einmal zu viel als zu wenig melden; Voraussetzung dafür ist eine Kultur ohne Schuldzuweisungen.
+
+\textbf{Schulungen und Sensibilisierung}
+
+Verfahren und Richtlinien wirken nur, wenn alle wissen, warum sie existieren und wie sie praktisch umzusetzen sind. Die NIS2-Anforderungen an Schulungen und empfohlene Inhalte beschreiben die Kapitel zu Schulungen und Geschäftsleitungsschulung. Hier sei nur betont: Cyberhygiene-Schulungen sind keine einmalige Pflichtveranstaltung, sondern kontinuierliche Sensibilisierung. Kurze, regelmäßige Erinnerungen, etwa per Newsletter, Poster oder Awareness-Mail, verstärken die Wirkung formaler Schulungen erheblich.
+\newpage
+\textbf{Checkliste}
+\begin{checklist}
+\item Passwortrichtlinie definieren und dokumentieren (Mindestlänge, Einzigartigkeit, Passwortmanager)
+\item Passwortanforderungen technisch in den Systemen durchsetzen
+\item Mehrfaktorauthentifizierung für alle relevanten Zugänge verpflichtend einführen
+\item Technische E-Mail-Schutzmaßnahmen prüfen und implementieren (SPF, DKIM, DMARC, Spamfilter)
+\item Meldewege für verdächtige E-Mails und Sicherheitsvorfälle definieren und kommunizieren
+\item Clean-Desk-Richtlinie einführen und in Schulungen verankern
+\item Automatische Bildschirmsperre auf allen Endgeräten aktivieren
+\item Richtlinie für den Umgang mit Wechselmedien definieren
+\item Regeln für mobiles Arbeiten und Homeoffice schriftlich festhalten
+\item VPN-Pflicht für externe Zugänge und öffentliche Netzwerke einführen
+\item Automatische Updates auf Endgeräten aktivieren oder zentral steuern
+\item Meldeweg für Sicherheitsvorfälle klar definieren und allen Mitarbeitenden bekannt machen
+\item Schulungskonzept für Cyberhygiene entwickeln und regelmäßige Durchführung sicherstellen
+\item Kontinuierliche Awareness-Maßnahmen ergänzend zu formalen Schulungen etablieren
+\end{checklist}

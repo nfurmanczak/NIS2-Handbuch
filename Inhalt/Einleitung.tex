@@ -1,0 +1,178 @@
+\section{Einleitung}
+Dieses Dokument ist ein Leitfaden zur praxisnahen Umsetzung der EU-Richtlinie 2022/2555 (NIS2). Trotz sorgfältiger Ausarbeitung kann keine Gewähr für die Vollständigkeit der Maßnahmen übernommen werden. Zudem gelten für einzelne Sektoren spezifische Anforderungen, und jedes Unternehmen hat eigene Prozesse, sodass die Maßnahmen stets unternehmensspezifisch angepasst werden müssen. Das kann ein allgemeines Dokument nicht leisten. Es bietet aber einen ersten Orientierungsrahmen, um Planung und Umsetzung von NIS2 strukturiert anzugehen.
+
+
+\subsection{Ziel der NIS2-Richtlinie}
+Auf den ersten Blick mag NIS2 wie eine weitere bürokratische EU-Vorgabe wirken, die Zeit und Geld kostet. In mancher Hinsicht ist das nachvollziehbar. Dennoch enthält NIS2 viele sinnvolle Elemente für die IT-Sicherheit. Deren Grundpfeiler sind nicht primär technische Maßnahmen wie Virenscanner oder Firewalls, sondern etablierte Prozesse und organisatorische Maßnahmen, aus denen sich die Schutzmechanismen ableiten. NIS2 verfolgt daher einen ganzheitlichen Ansatz und sollte als Chance gesehen werden, die eigene IT-Sicherheitsstrategie kritisch zu hinterfragen und weiterzuentwickeln.
+
+Ziel der EU ist es, das IT-Sicherheitsniveau von Unternehmen europaweit zu stärken. Durch die fortschreitende Digitalisierung sind IT-Systeme ein zentraler Bestandteil des wirtschaftlichen und gesellschaftlichen Lebens. Gleichzeitig nimmt die Bedrohungslage, insbesondere durch geopolitische Spannungen, stetig zu.
+
+\subsection{Verhältnis von NIS2 zu ISO~27001, KRITIS, DORA, usw.}
+Ein verbreiteter Irrtum ist, dass NIS2 zwingend ein Informationssicherheits-Managementsystem (ISMS) oder eine ISO 27001-Zertifizierung erfordert. Streng genommen verlangt NIS2 u.\,a. eine Risikoanalyse mit Sicherheitsmaßnahmen, Business Continuity, Incident Management, Supply Chain Security und IT-Awareness-Schulungen. All das ist auch ohne ISMS umsetzbar. Die Einführung eines ISMS ist dennoch empfehlenswert, falls noch keines existiert.
+\newpage
+Auch Unternehmen mit ISO 27001 oder vergleichbarer Zertifizierung (z.\,B. TISAX, IT-Grundschutz) müssen zusätzliche NIS2-Anforderungen erfüllen, etwa die Geschäftsleiterschulung oder die Meldung erheblicher Sicherheitsvorfälle an das BSI. Zudem gilt NIS2 immer für das gesamte Unternehmen, während bei ISO der Gültigkeitsbereich (Scope) frei gewählt werden kann. Ein Unternehmen kann außerdem mehreren Regelwerken unterliegen: Wer zusätzlich von DORA oder KRITIS betroffen ist, kann NIS2 nicht ignorieren.
+
+\subsection{Wichtige Dokumente}
+Im EU-Recht wird zwischen Richtlinien und Verordnungen unterschieden. Verordnungen gelten unmittelbar und einheitlich in allen Mitgliedstaaten. Richtlinien wie NIS2 geben nur das Ziel vor und überlassen den Mitgliedstaaten die konkrete Ausgestaltung; sie müssen daher stets in nationales Recht umgesetzt werden.
+
+In Deutschland erfolgt dies durch das NIS2-Umsetzungsgesetz (NIS2UmsuCG), das die Anpassungen bestehender Gesetze, insbesondere des BSI-Gesetzes (BSIG), bündelt. Auch weitere Gesetze wie das Telekommunikationsgesetz werden angepasst; Unternehmen in diesen Bereichen müssen diese Änderungen ebenfalls berücksichtigen. Zentrales Referenzdokument in Deutschland ist das BSIG. Andere EU-Mitgliedstaaten haben eigene, im Detail abweichende Umsetzungsgesetze.
+
+\begin{itemize}
+    \item \href{https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=CELEX:32022L2555/}{EU-Richtlinie 2022/2555}
+    \item \href{https://www.bmi.bund.de/SharedDocs/gesetzgebungsverfahren/DE/Downloads/kabinettsfassung/CI1/nis2-regierungsentwurf.pdf?__blob=publicationFile&v=2}{NIS2UmsuCG}
+    \item \href{https://www.gesetze-im-internet.de/bsig_2025/BJNR12D0B0025.html}{BSI-Gesetz}
+\end{itemize}
+
+
+
+\newpage
+
+\section{Betroffenheitsprüfung}
+
+Zunächst ist zu klären, ob die eigene Organisation überhaupt von NIS2 betroffen ist. Der Kreis der betroffenen Branchen wurde gegenüber der ersten NIS-Richtlinie deutlich erweitert. Wer bislang nicht unter NIS fiel, ist also nicht automatisch auch von NIS2 ausgenommen.
+
+Die Anwendbarkeit hängt davon ab, ob das Unternehmen in einem der definierten Sektoren tätig ist und die Schwellenwerte für Mitarbeiterzahl und Umsatz erfüllt. Die verbindliche Auflistung der Sektoren und weitere Definitionen finden sich in Teil 8, Anlage 1 und 2 des BSI-Gesetzes. Dort wird zwischen Sektor, Branche und Einrichtungsart unterschieden; die Einrichtungsart ist am konkretesten und verweist teils auf Gesetze und Paragrafen, die eine Tätigkeit oder Einrichtung definieren.
+
+Im Folgenden werden die relevanten Sektoren exemplarisch aufgeführt:\\
+\textbf{Sektoren gemäß Anlage 1:}
+\begin{itemize}
+    \item Energie (z.B. Stromlieferanten, Betreiber von Übertragungsnetzen oder Erzeugungsanlagen, Energiespeicheranlagen, Fernwärmeversorger, Kraftstoff- und Heizölversorger, Gasversorger und Gasverteilernetze, Erdgasanlagen etc.)
+    \item Transport und Verkehr (z.B. Luftfahrtunternehmen, Flughafenleitungsorgane, Verkehrsmanagementsysteme, Schienenverkehr, Schifffahrt, Anlagen oder Systeme für den Straßenverkehr etc.)
+    \item Finanzwesen (z.B. Banken und Kreditinstitute, Finanzmarktinfrastrukturen, Handelsplätze etc.)
+    \item Gesundheit (z.B. Erbringer von Gesundheitsdienstleistungen, EU-Referenzlaboratorien, Forschung und Entwicklung im Bereich Arzneimittel, Herstellung von Medizinprodukten, pharmazeutische Erzeugnisse etc.)
+    \item Wasser (z.B. Trinkwasserversorgung und Abwasserbeseitigung)
+    \item Digitale Infrastruktur (z.B. Internet Exchange Points, DNS-Dienstanbieter, TLD-Registries, Cloud-Computing-Dienste, Rechenzentrumsdienste, CDN, Vertrauensdienstanbieter, Betreiber öffentlicher Telekommunikationsnetze, Anbieter von Telekommunikationsdiensten, Managed Server Provider, Managed Security)
+    \item Weltraum (z.B. Erbringung von weltraumgestützten Diensten, ausgenommen Kommunikationsdienste)
+\end{itemize}
+\newpage
+
+\textbf{Sektoren gemäß Anlage 2:}
+
+\begin{itemize}
+    \item Transport und Verkehr, insbesondere Post- und Kurierdienste
+    \item Abfallbewirtschaftung (ausgenommen Unternehmen, bei denen die Abfallbewirtschaftung nicht die Hauptwirtschaftstätigkeit darstellt)
+    \item Produktion, Herstellung und Handel mit chemischen Stoffen
+    \item Produktion, Verarbeitung und Vertrieb von Lebensmitteln
+    \item Verarbeitendes Gewerbe und Herstellung von Waren (z.B. Medizinprodukte oder In-vitro-Diagnostika, Datenverarbeitungsgeräte, elektronische oder optische Erzeugnisse, elektrische Ausrüstungen, Maschinenbau, Kraftfahrzeuge oder -teile)
+    \item Anbieter digitaler Dienste (z.B. Online-Marktplätze, Online-Suchmaschinen, soziale Netzwerke etc.)
+    \item Forschungseinrichtungen
+\end{itemize}
+\newpage
+
+Ist Ihr Unternehmen in einem dieser Sektoren (Anlage 1 oder 2) tätig, kann eine Betroffenheit vorliegen. Dabei ist §28 Absatz 3 BSIG zu beachten: Geschäftstätigkeiten, die im Verhältnis zur gesamten Geschäftstätigkeit vernachlässigbar sind, müssen nicht berücksichtigt werden. Das ist vor allem für Unternehmen relevant, die in mehreren Sektoren tätig sind.
+
+Maßgeblich sind zusätzlich die Schwellenwerte: Ihr Unternehmen fällt unter NIS2, wenn \textbf{es mehr als 50 Mitarbeitende} beschäftigt \textbf{oder} wenn \textbf{Jahresumsatz und Jahresbilanzsumme mehr als 10 Mio. Euro betragen}. Mit diesem ersten Schwellenwert gilt Ihr Unternehmen als wichtige Einrichtung.
+
+Kleine Unternehmen sind somit grundsätzlich ausgenommen, auch in betroffenen Sektoren. Eine Ausnahme bilden Monopolisten, die unabhängig von ihrer Größe erfasst werden.
+
+Ab dem \textbf{zweiten Schwellenwert} (mehr als \textbf{250 Mitarbeitende} oder \textbf{Jahresumsatz über 50 Mio. und Jahresbilanzsumme über 43 Mio. Euro}) gilt das Unternehmen als besonders wichtig.
+
+
+NIS2 unterscheidet somit zwischen wichtigen und besonders wichtigen Einrichtungen:
+
+\textbf{Wichtige Einrichtungen:} Das Unternehmen gehört zu den Sektoren in Anlage 1 und erfüllt den ersten Schwellenwert (50 Mitarbeitende oder 10 Mio. \texteuro{} Jahresumsatz und Jahresbilanzsumme).
+
+\textbf{Besonders wichtige Einrichtungen:} Das Unternehmen gehört zu den Sektoren in Anlage 2 oder es gehört zu Anlage 1 und erfüllt den zweiten Schwellenwert (250 Mitarbeitende oder 50 Mio. \texteuro{} Jahresumsatz und 43 Mio. \texteuro{} Jahresbilanzsumme).
+
+Die Unterschiede betreffen vor allem Kontrolle und Registrierung: Besonders wichtige Einrichtungen können vom BSI auch ohne Anlass kontrolliert werden und müssen sich im BSI-Portal als solche registrieren. Ansonsten sind die Anforderungen identisch.
+
+Lässt sich anhand des BSIG und der Anlagen 1 und 2 nicht eindeutig beurteilen, ob ein Unternehmen unter NIS2 fällt, ist juristische Beratung dringend anzuraten.
+
+
+\newpage
+
+\subsection{Vorbereitende Maßnahmen}
+
+\subsection{Verantwortung der Umsetzung}
+
+Die Gesamtverantwortung für die Einhaltung von NIS2 liegt bei der Geschäftsführung bzw. dem Management. Sie muss die Umsetzung aktiv steuern und die nötigen personellen und finanziellen Ressourcen bereitstellen.
+
+Für die operative Umsetzung sollten geeignete Mitarbeitende (mindestens zwei, inklusive Stellvertretung) benannt werden, die koordinieren, als zentrale Ansprechpersonen dienen und die Abstimmung mit Management und Fachbereichen sicherstellen. Sie sollten künftig auch die Rolle des "IT-Sicherheitsbeauftragten" übernehmen. Regelmäßige Statustermine mit der Geschäftsführung bzw. dem Management sind empfehlenswert; Inhalte und Teilnehmende sollten kurz als Nachweis dokumentiert werden.
+
+Fehlen Fachwissen oder interne Kapazitäten, sollten Qualifizierungsmaßnahmen durchgeführt oder, falls unumgänglich, externe Dienstleister hinzugezogen werden. Da der nachhaltige Aufbau interner Kompetenzen zentral ist, sollte Auslagerung die Ausnahme bleiben.
+
+
+\subsection{Vorgaben zur Umsetzung}
+NIS2 bzw. das BSIG macht keine detaillierten Vorgaben zur Umsetzung und lässt so Gestaltungsspielraum. Die Maßnahmen müssen jedoch stets angemessen sein: weder unzureichend noch unverhältnismäßig aufwendig, sondern am tatsächlichen Schutzbedarf orientiert.
+
+Technische und organisatorische Maßnahmen sind nach dem Stand der Technik umzusetzen. Im Zweifel bieten anerkannte Standards (z.\,B. ISO 27001, BSI-200er Reihe), branchenspezifische Richtlinien oder BSI-Empfehlungen Orientierung.
+\newpage
+\subsection{Dokumentation}
+Alle umgesetzten Maßnahmen sind nachvollziehbar und belegbar zu dokumentieren. Die Dokumentation dient als Nachweis für Umsetzung und Entscheidungen sowie der internen Steuerung und kontinuierlichen Verbesserung. Besonders wichtig ist sie bei anlassbezogenen oder stichprobenartigen Prüfungen durch das BSI oder beauftragte Dritte. Es gilt: \textbf{Ist es nicht dokumentiert, existiert es nicht.}
+
+\subsection{PDCA-Zyklus}
+NIS2 fordert u.\,a. „Kontrollen zur Bewertung der Wirksamkeit“ sowie eine „kontinuierliche Verbesserung“ der Sicherheitsmaßnahmen. Dafür sollten Prozesse zur Steuerung und Überprüfung der Umsetzung etabliert werden.
+
+Bewährt hat sich der PDCA-Zyklus (Plan–Do–Check–Act). Er ist schlank, praxisorientiert, lässt sich nahtlos in bestehende Managementsysteme integrieren, ist auditierbar und mit Standards wie ISO 27001 kompatibel.
+
+\subsection{Dauer und Kosten der Umsetzung}
+Dauer und Kosten der Umsetzung lassen sich vorab kaum präzise beziffern. Erst eine ausführliche Gap-Analyse zeigt, wie lange die Umsetzung dauert und welche Ressourcen nötig sind.
+Den größten Aufwand verursachen vermutlich Dokumentation und Prozessdefinition. Diese Aspekte werden oft vernachlässigt, selbst wenn das technische Schutzniveau relativ hoch ist.
+
+\newpage
+\subsection{Konsequenzen bei Nichterfüllung}
+
+Das Bundesamt für Sicherheit in der Informationstechnik (BSI) ist die zentrale Aufsichtsbehörde. Art und Umfang der Kontrollen richten sich nach der Einrichtungskategorie:
+\begin{itemize}
+    \item \textbf{Besonders wichtige Einrichtungen:} Das BSI kann Prüfungen auch ohne konkreten Anlass anordnen
+    \item \textbf{Wichtige Einrichtungen:} Kontrollen erfolgen nur bei konkretem Anlass (z.B. Sicherheitsvorfall, Hinweis, Beschwerde)
+    \item \textbf{KRITIS-Betreiber:} Müssen alle drei Jahre aktiv die Umsetzung ihrer Maßnahmen nachweisen; erstmalig frühestens im Jahr 2027
+\end{itemize}
+
+Alle betroffenen Einrichtungen müssen sich innerhalb von drei Monaten nach ihrer Identifizierung beim BSI registrieren und Änderungen relevanter Angaben unverzüglich melden. Zudem sind erhebliche Sicherheitsvorfälle fristgerecht an das BSI zu melden.
+
+Zu den potenziellen Verstößen zählen insbesondere:
+\begin{itemize}
+    \item Maßnahmen werden nicht korrekt, nicht vollständig oder nicht fristgerecht umgesetzt,
+    \item Maßnahmen werden nicht oder nicht ordnungsgemäß dokumentiert,
+    \item eine Meldung an das BSI wird nicht, nicht vollständig oder nicht rechtzeitig eingereicht,
+    \item Angaben an das BSI werden nicht, nicht vollständig oder nicht fristgerecht übermittelt.
+    \item Das Unternehmen verweigert oder erschwert die Zusammenarbeit mit dem BSI.
+\end{itemize}
+
+Die Bußgelder richten sich nach der Einrichtungskategorie und der Schwere des Verstoßes:
+\begin{itemize}
+    \item \textbf{Besonders wichtige Einrichtungen:} bis zu 10 Mio. EUR oder 2\,\% des weltweiten Jahresumsatzes, je nachdem welcher Betrag höher ist
+    \item \textbf{Wichtige Einrichtungen:} bis zu 7 Mio. EUR oder 1,4\,\% des weltweiten Jahresumsatzes, je nachdem welcher Betrag höher ist
+    \item \textbf{KRITIS-Betreiber bei fehlender Mängelbeseitigung:} bis zu 2 Mio. EUR
+    \item \textbf{Unzureichende Nachweise:} bis zu 1 Mio. EUR
+    \item \textbf{Verletzung von BSI-Anordnungen:} bis zu 500.000 EUR
+\end{itemize}
+
+\newpage
+\section{NIS2 Anforderungen}
+
+Unternehmen müssen für NIS2 die folgenden Maßnahmen nach BSIG §30 umsetzen:
+
+\begin{itemize}
+    \item Risikoanalyse und Sicherheit für Informationssysteme
+    \item Konzepte und Verfahren zur Bewertung der Wirksamkeit von Risikomanagement-
+    maßnahmen
+    \item Bewältigung von Sicherheitsvorfällen
+    \item Schwachstellenmanagement
+    \item Notfall- sowie Krisenmanagement
+    \item Sicherheit der Lieferkette einschließlich sicherheitsbezogener Aspekte
+    \item Konzepte und Verfahren für den Einsatz von Kryptografie und gegebenenfalls Verschlüsselung
+    \item Grundlegende Verfahren im Bereich der Cyberhygiene und Schulungen
+    \item Sicherheitsmaßnahmen bei Erwerb, Entwicklung und Wartung von Netz-
+    und Informationssystemen, einschließlich Management und Offenlegung von
+    Schwachstellen
+    \item Verwendung von Lösungen zur Multi-Faktor-Authentifizierung oder kontinuierlichen
+    Authentifizierung, gesicherte Sprach-, Video- und Textkommunikation sowie
+    gegebenenfalls gesicherte Notfallkommunikationssysteme innerhalb der Einrichtung
+    \item Sicherheit des Personals, Konzepte für die Zugriffskontrolle und Management von
+    Anlagen
+\end{itemize}
+
+Die Maßnahmen sollten trotz gewisser Abhängigkeiten einzeln betrachtet und umgesetzt werden. Die Reihenfolge hängt von Unternehmensgröße und bestehenden Prozessen ab; empfehlenswert ist jedoch, mit dem Risikomanagementprozess zu beginnen.
+
+\newpage
+\textbf{Checkliste: Vorbereitung}
+\begin{checklist}
+    \item Prüfen Sie, ob Ihr Unternehmen von NIS2 betroffen ist, durch Abgleich der Sektoren gemäß Anlage~1 und~2 des BSIG sowie der relevanten Schwellwerte.
+    \item Geschäftsführung und Management über NIS2 sowie deren Verantwortlichkeiten im Rahmen von NIS2 informieren.
+    \item Verantwortlichkeiten für die Analyse und Umsetzung der NIS2-Anforderungen festlegen.
+    \item Eine GAP-Analyse durchführen.
+    \item Entscheidung treffen, ob die Umsetzung von NIS2 intern oder mit externer Unterstützung erfolgen soll.
+    \item Bei interner Umsetzung die erforderlichen personellen und finanziellen Ressourcen festlegen und freigeben.
+\end{checklist}

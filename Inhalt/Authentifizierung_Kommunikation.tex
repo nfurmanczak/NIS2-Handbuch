@@ -1,0 +1,113 @@
+\newpage
+\subsection{Sichere Authentifizierung und Kommunikation}
+
+\textbf{Anforderung:} NIS2 fordert Mehrfaktorauthentifizierung oder kontinuierliche Authentifizierung, gesicherte Sprach-, Video- und Textkommunikation sowie, wo erforderlich, gesicherte Notfallkommunikationssysteme innerhalb der Einrichtung.
+
+Dahinter steckt eine einfache Erkenntnis: Weder Passwörter allein noch unverschlüsselte Kanäle schützen geschäftliche Informationen ausreichend. Wer in Videokonferenzen Vertrauliches bespricht, Unternehmensinformationen per Chat versendet oder remote auf kritische Systeme zugreift, muss diese Vorgänge gegen Abhören, Manipulation und unbefugten Zugriff schützen.
+
+\textbf{Mehrfaktorauthentifizierung}
+
+Die Kapitel zur Cyberhygiene und Zugriffskontrolle erwähnen die Mehrfaktorauthentifizierung bereits als Grundmaßnahme. Hier wird vertieft, welche Methoden es gibt, wo sie eingesetzt werden sollten und was eine gute Umsetzung ausmacht.
+
+Dabei wird neben dem Passwort mindestens ein weiterer Faktor verlangt. Gängige Faktorkategorien sind:
+
+\begin{itemize}
+    \item \textbf{Wissen:} etwas, das nur die Person kennt (Passwort, PIN)
+    \item \textbf{Besitz:} etwas, das die Person physisch hat (Smartphone, Hardware-Token)
+    \item \textbf{Biometrie:} etwas, das die Person ist (Fingerabdruck, Gesichtserkennung)
+\end{itemize}
+
+Mindestens zwei unterschiedliche Kategorien müssen kombiniert werden. Passwort plus SMS-Code gilt formell als Mehrfaktorauthentifizierung, ist aber die schwächste Variante, da SMS-Codes abgefangen werden können. Empfehlenswerter sind:
+
+\begin{itemize}
+    \item \textbf{Authenticator-Apps (TOTP):} Zeitbasierte Einmalcodes über Apps wie Microsoft Authenticator, Google Authenticator oder ähnliche. Einfach einzuführen, weit verbreitet, deutlich sicherer als SMS
+    \item \textbf{Push-Benachrichtigungen:} Der Nutzer bestätigt den Anmeldeversuch per App auf dem Smartphone. Komfortabel und sicher, solange die Nutzer keine unbekannten Anfragen bestätigen
+    \item \textbf{Hardware-Token (FIDO2/WebAuthn):} Physische Sicherheitsschlüssel wie YubiKey sind die sicherste Option und besonders für Administratorkonten und privilegierte Zugänge geeignet. Sie sind phishing-resistent und lassen sich von keiner Website fälschen
+    \item \textbf{Passkeys:} Eine moderne Alternative, die Passwort und zweiten Faktor vereint. Passkeys werden auf dem Gerät gespeichert und nutzen biometrische oder PIN-Entsperrung. Sie sind phishing-resistent und zunehmend von Diensten unterstützt
+\end{itemize}
+
+\textbf{Wo sollte Mehrfaktorauthentifizierung verpflichtend sein?}
+
+Nicht überall ist dieselbe Stärke nötig. Priorisieren Sie die Bereiche mit dem größten Risiko:
+
+\begin{itemize}
+    \item Alle externen Zugänge (VPN, Remote Desktop, Web-Portale, Cloud-Dienste)
+    \item Administratorenkonten und privilegierte Zugänge
+    \item E-Mail-Konten, insbesondere der Geschäftsführung und Mitarbeitenden mit Zugang zu sensiblen Daten
+    \item Zugriffe auf besonders kritische interne Systeme
+\end{itemize}
+
+\textbf{Kontinuierliche Authentifizierung}
+
+Bei der kontinuierlichen Authentifizierung wird die Berechtigung nicht nur beim Login, sondern fortlaufend während der Sitzung geprüft. Moderne Ansätze nutzen kontextbezogene Signale: Verhält sich die Person ungewöhnlich? Hat sich der Standort plötzlich geändert? Wird zu unüblichen Zeiten zugegriffen?
+
+Echte kontinuierliche Authentifizierung ist noch wenig verbreitet und erfordert entsprechende Infrastruktur. Ein pragmatischer Einstieg sind kürzere Sitzungszeitlimits, automatische Sperrung bei Inaktivität und Wiederauthentifizierung bei besonders sensiblen Aktionen. Manche Identity-Management-Lösungen und Conditional-Access-Richtlinien bieten dies bereits ohne großen Zusatzaufwand.
+\newpage
+\textbf{Gesicherte Kommunikation}
+
+NIS2 betrifft explizit auch die Kommunikationssicherheit. Geschäftliche Kommunikation läuft über viele Kanäle wie E-Mail, Telefon, Videokonferenzen, Chats und Collaboration-Plattformen, die unterschiedlich sicher sind. Viele Organisationen setzen Tools ein, ohne deren Sicherheitseigenschaften geprüft zu haben.
+
+\textbf{Was macht Kommunikation sicher?}
+
+Grundlegende Anforderungen an sichere Kommunikationskanäle:
+
+\begin{itemize}
+    \item \textbf{Verschlüsselung in der Übertragung:} Alle Kommunikation sollte verschlüsselt übertragen werden, so dass sie beim Abfangen im Netzwerk nicht lesbar ist
+    \item \textbf{Ende-zu-Ende-Verschlüsselung:} Für besonders sensible Inhalte sollte die Kommunikation so verschlüsselt sein, dass nur Sender und Empfänger sie lesen können, nicht der Anbieter des Dienstes
+    \item \textbf{Zugriffskontrolle:} Nur autorisierte Personen können an Gesprächen oder Chats teilnehmen
+    \item \textbf{Datenspeicherung und Rechtsrahmen:} Wo werden Daten gespeichert? Unter welcher Rechtsordnung operiert der Anbieter? Für viele Organisationen ist die Verarbeitung innerhalb der EU oder in Deutschland ein wichtiges Kriterium
+\end{itemize}
+
+\textbf{Textkommunikation und Kollaboration}
+
+Private Messenger wie WhatsApp, Telegram oder iMessage sollten trotz verbreiteter Praxis nicht geschäftlich genutzt werden: Sie sind für den privaten Gebrauch konzipiert, und es fehlt die Kontrolle über Datenhaltung, Zugriffe und Archivierung.
+
+Geschäftlich sollten dedizierte, verwaltbare Lösungen eingesetzt werden, etwa Microsoft Teams, Slack oder, für besonders sicherheitsbewusste Organisationen, auf Ende-zu-Ende-Verschlüsselung ausgerichtete Dienste wie Threema Work oder Wire for Business. Die Lösung muss zentral verwaltbar sein, Zugriffsrechte müssen steuerbar sein, und ausscheidende Mitarbeitende sind konsequent zu entfernen.
+\newpage
+\textbf{Sprach- und Videokonferenzen}
+
+Für Videokonferenzen gelten ähnliche Anforderungen, zusätzlich:
+
+\begin{itemize}
+    \item Meetings mit sensiblen Inhalten sollten passwortgeschützt oder per Warteraum gesichert sein
+    \item Teilnehmerlisten sollten vor dem Meeting definiert und kontrolliert werden
+    \item Aufnahmen von Meetings mit vertraulichen Inhalten sollten nur mit ausdrücklicher Zustimmung aller Teilnehmenden erfolgen
+    \item Bildschirmfreigaben sollten nur gezielt und kontrolliert aktiviert werden
+    \item Externe Teilnehmende sollten keine Möglichkeit haben, eigene Inhalte zu teilen oder die Konferenz zu stören
+\end{itemize}
+
+\textbf{E-Mail-Verschlüsselung}
+
+E-Mail ist von Haus aus unsicher: Ohne zusätzliche Verschlüsselung werden Nachrichten im Klartext übertragen und gespeichert. Transportverschlüsselung (TLS) ist heute Standard und schützt die Übertragung zwischen Mailservern. Für besonders sensible Inhalte empfiehlt sich zusätzlich Ende-zu-Ende-Verschlüsselung per S/MIME oder PGP, was jedoch Infrastruktur und Abstimmung mit den Kommunikationspartnern erfordert. Details enthält das Kapitel zur Verschlüsselung.
+
+\textbf{Gesicherte Notfallkommunikation}
+
+Oft übersehen wird: Was, wenn die üblichen Kommunikationssysteme im Ernstfall ausfallen? Bei einem Cyberangriff, IT-Ausfall oder physischen Notfall sind E-Mail und interne Chats möglicherweise nicht erreichbar. Gerade dann ist funktionierende Kommunikation aber besonders wichtig.
+
+NIS2 fordert daher gesicherte Notfallkommunikationswege. Praktische Maßnahmen:
+
+\begin{itemize}
+    \item Eine aktuelle, offline verfügbare Liste mit privaten Telefonnummern aller relevanten Personen (Geschäftsführung, IT-Verantwortliche, Krisenteam)
+    \item Ein definierter alternativer Kommunikationskanal, der unabhängig von der eigenen IT-Infrastruktur ist, zum Beispiel ein separater Messengerdienst auf privaten Geräten
+    \item Klare Regelung, wer wen im Notfall wie informiert und in welcher Reihenfolge
+    \item Regelmäßige Prüfung, ob die Notfallkontakte noch aktuell sind
+\end{itemize}
+
+Die Notfallkommunikation sollte in das übergeordnete Notfallmanagement eingebettet sein (siehe Kapitel Notfall- und Krisenmanagement).
+
+\textbf{Checkliste}
+\begin{checklist}
+\item Mehrfaktorauthentifizierung für alle externen Zugänge einführen
+\item Mehrfaktorauthentifizierung für Administratorenkonten und privilegierte Zugänge einführen
+\item MFA-Methode wählen: Authenticator-App, Hardware-Token oder Passkeys (SMS als einzige Option vermeiden)
+\item Sitzungszeitlimits und automatische Sperrung bei Inaktivität konfigurieren
+\item Richtlinie für geschäftliche Kommunikationstools definieren (keine privaten Messengerdienste für Geschäftliches)
+\item Geeignete, zentral verwaltbare Kollaborations- und Kommunikationslösung einführen
+\item Videokonferenz-Sicherheitseinstellungen prüfen (Passwortschutz, Warteraum, Teilnehmerkontrolle)
+\item E-Mail-Transportverschlüsselung (TLS) sicherstellen
+\item Für besonders sensible Kommunikation Ende-zu-Ende-Verschlüsselung prüfen (S/MIME, PGP)
+\item Notfallkommunikationsweg definieren, der unabhängig von der eigenen IT-Infrastruktur ist
+\item Offline-Liste mit Notfallkontakten (private Telefonnummern) erstellen und aktuell halten
+\item Notfallkommunikationsplan in das übergeordnete Notfallmanagement integrieren
+\item Mitarbeitende über die geltenden Kommunikationsrichtlinien schulen
+\end{checklist}

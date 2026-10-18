@@ -1,0 +1,37 @@
+\newpage
+\subsection{Kryptografie}
+Organisationen müssen ein strukturiertes Konzept mit Verfahren entwickeln und anwenden, das eine angemessene und wirksame Nutzung von Kryptografie sicherstellt. Die Maßnahmen müssen dem Schutzbedarf der Informationen entsprechen und auf einer Risikoanalyse beruhen. Prüfen Sie, wo welche Informationen gespeichert und zwischen welchen Systemen oder Personen Daten ausgetauscht werden, und klassifizieren Sie den Schutzbedarf anhand einer einfachen Skala. Besonders schützenswert sind neben firmeninternen Informationen personenbezogene Daten von Mitarbeitenden oder Kunden, etwa Name, Adresse, Telefonnummer, E-Mail-Adresse, Zahlungsinformationen oder medizinische Daten.
+
+\textbf{Kryptografische Maßnahmen definieren:} Das Konzept legt Art, Stärke und Qualität der kryptografischen Maßnahmen auf Basis der Klassifizierung Ihrer Anlagen und Werte fest, und zwar für gespeicherte wie übermittelte Daten, angepasst an den jeweiligen Schutzbedarf. Zentral sind genehmigte Protokolle sowie zugelassene Algorithmen und deren Mindestschlüsselstärke. Es sollten nur Standards nach aktuellem Stand der Technik genutzt werden; Empfehlungen wie die BSI TR-02102 sind zu berücksichtigen. Zudem sollte das Konzept krypto-agil sein, um flexibel auf neue Bedrohungen oder Schwachstellen reagieren zu können.
+
+\textbf{Überwachung und Compliance:} Management-Tätigkeiten rund um Schlüssel sind umfassend zu protokollieren und zu prüfen. Konzept und Verfahren müssen in geplanten Abständen überprüft und bei Bedarf an den Stand der Technik angepasst werden.
+\newpage
+\textbf{Schlüsselmanagement:} Das umfassendste und kritischste Element ist ein strukturiertes Schlüsselmanagement über den gesamten Lebenszyklus der Schlüssel:
+
+\begin{itemize}
+\item \textit{Generierung:} Sichere Verfahren zur Erzeugung verschiedener Schlüssel für unterschiedliche kryptografische Systeme und Anwendungen
+\item \textit{Zertifikate:} Prozesse für die Ausstellung und Erlangung von Public-Key-Zertifikaten
+\item \textit{Verteilung:} Sichere Methoden zur Übertragung von Schlüsseln an autorisierte Systeme mit klar definierten Aktivierungsverfahren
+\item \textit{Speicherung:} Sichere Aufbewahrung mit kontrolliertem Zugang für autorisierte Nutzer
+\item \textit{Änderung/Aktualisierung:} Vorschriften, wann und wie Schlüssel zu ändern sind
+\item \textit{Umgang mit Kompromittierung:} Prozesse für den Fall beeinträchtigter Schlüssel
+\item \textit{Widerruf:} Verfahren zur Deaktivierung nicht mehr benötigter oder kompromittierter Schlüssel
+\item \textit{Wiederherstellung:} Möglichkeiten zur Wiederherstellung verlorener oder beschädigter Schlüssel
+\item \textit{Archivierung:} Verfahren zur sicheren Archivierung für Compliance-Zwecke
+\item \textit{Vernichtung:} Sichere Vernichtung am Ende der Nutzungsdauer
+\item \textit{Gültigkeitsfristen:} Definition von Aktivierungs- und Deaktivierungsfristen
+\end{itemize}
+
+\textbf{Praktische Umsetzung:} Verschaffen Sie sich zunächst einen Überblick, wo schützenswerte Informationen gespeichert und übertragen werden. In der Regel sind das Datenbanken, SharePoints oder Cloud-Systemen. Passwörter sollten als gesalzene Hashes (z.\,B. bcrypt, Argon2) gespeichert werden. Auf mobilen Endgeräten (Smartphones, Notebooks etc.) sollte der Datenträger stets vollständig verschlüsselt sein, um Daten bei Verlust zu schützen. Sensible Informationen sollten verschlüsselt gespeichert und die Schlüssel getrennt von den Daten verwaltet werden. Dokumente in SharePoints, Netzlaufwerken oder der Cloud sollten bei der Übertragung (TLS) und im Ruhezustand (z.\,B. AES-256) verschlüsselt sein. Wo Protokolle Transportverschlüsselung wie TLS unterstützen, sollte diese aktiviert werden, auch bei internen Verbindungen im selben Netzwerk, damit Angreifer mit Zugriff auf ein internes System schwerer an Daten gelangen. Quantencomputer sind zwar noch Zukunftsmusik, doch unerwartete Durchbrüche könnten die Entwicklung beschleunigen; mit ihrer enormen Leistung könnten sie viele Verschlüsselungen leicht brechen. Es ist daher sinnvoll, sich schon jetzt mit Post-Quanten-Kryptografie zu befassen.
+
+Neben der Auswahl sicherer, aktueller Verfahren und Bibliotheken ist regelmäßig zu prüfen, ob diese noch als sicher gelten und den Anforderungen genügen. Veraltete, unsichere Verfahren sollten umgehend ersetzt werden.
+
+\vspace{1em}
+\textbf{Checkliste: Kryptografie}
+\begin{checklist}
+    \item Identifizieren, welche Daten und Verbindungen geschützt werden müssen
+    \item Falls nötig Daten nach Schutzbedarf klassifizieren
+    \item Konzept erstellen, welche Verschlüsselung bei welchen Daten genutzt werden muss
+    \item Prozess erstellen, der die Umsetzung überwacht
+    \item Prozess erstellen, nach dem regelmäßig der Schutzbedarf und die Sicherheit der genutzten Verschlüsselungsverfahren geprüft werden
+\end{checklist}

@@ -1,0 +1,39 @@
+# LaTeX-Hilfsdateien
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.xdv
+*.dvi
+
+# Bibliografie (biber/bibtex)
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+
+# Glossar / Index
+*.glo
+*.gls
+*.glg
+*.ist
+*.acn
+*.acr
+*.alg
+*.idx
+*.ilg
+*.ind
+
+# Sonstiges
+*.nav
+*.snm
+*.vrb
+*.bak
+*~
+.DS_Store
